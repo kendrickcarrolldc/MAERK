@@ -3,7 +3,10 @@
 angular.module('maerkApp', ['maerkApp.auth', 'maerkApp.admin', 'maerkApp.constants', 'ngCookies',
     'ngResource', 'ngSanitize', 'ui.router', 'validation.match','ngMaterial'
   ])
-  .config(function($urlRouterProvider, $locationProvider) {
+  .config(function($urlRouterProvider, $locationProvider, $mdThemingProvider) {
+		$mdThemingProvider.theme('default')
+    .primaryPalette('light-green')
+    .accentPalette('grey');
     $urlRouterProvider.otherwise('/');
 
     $locationProvider.html5Mode(true);
