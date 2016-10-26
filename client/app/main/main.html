@@ -1,18 +1,54 @@
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
-  </div>
-</header>
+<section class="testH" layout="row" flex>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
-        <li><a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+ <md-sidenav
+     class="md-sidenav-left "
+     md-component-id="left"
+     md-is-locked-open="$mdMedia('gt-md')"
+     md-whiteframe="4">
+
+
+   <md-toolbar class="md-theme-indigo" layout layout-align = "center center">
+       <h1>Side Nav Left</h1>
+   </md-toolbar>
+<md-list>
+      <md-button width='100%'>
+				<md-list-item>
+        <md-icon class="md-default-theme" class="material-icons">&#xE6DD;</md-icon>
+        <p>Reports</p>
+				
+      </md-button>
+			<md-divider></md-divider>	
+				<md-button>
+				<md-list-item>
+        <md-icon class="md-default-theme" class="material-icons">&#xE7FD;</md-icon>
+        <p>Employee</p>
+				
+      </md-button>
+			<md-divider></md-divider>		
+					<md-button>
+				<md-list-item>
+        <md-icon class="md-default-theme" class="material-icons">&#xE7FE;</md-icon>
+        <p>Recruiter</p>
+			
+      </md-button>
+			<md-divider></md-divider>			
+						<md-button>
+				<md-list-item>
+        <md-icon class="md-default-theme" class="material-icons">&#xE862;</md-icon>
+        <p>Register Quarter</p>
+				
+      </md-button>
+     
+      
+ </md-list>
+					</md-sidenav>
+
+ <md-content flex layout-padding>
+
+   <ui-view></ui-view>
+
+ </md-content>
+
+
+
+</section>

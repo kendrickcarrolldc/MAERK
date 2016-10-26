@@ -12,11 +12,52 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   padding: 0.2em 0;
 }
 
+.material-icons.md-36 { 
+	font-size: 36px;
+	positon: relative;
+	right: 10px;
+	padding-right: 10px;
+}
+
+//.mIcons {
+//	float: right;
+//	position: absolute;
+//	right: 5px;
+//}
+.logo {
+	width: 200px;
+	height: 45px;
+	position: absolute;
+	top: 15px;
+	left: 20px;
+	
+}
+md-content {
+	padding-bottom: 10px;
+}
+
+.navBardemoBasicUsage md-content .ext-content {
+  padding: 50px;
+  margin: 20px;
+  background-color: #FFF2E0; }
+
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 100%;
   }
+	
+	
+}
+
+@media screen and (max-width: 900px) {
+  .logo {
+	width: 100px;
+	height: 23px;
+	display: none;	
+	
+}
 }
 
 // Component styles are injected through grunt
