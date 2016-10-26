@@ -43,19 +43,21 @@ md-content {
 
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 100%;
-  }
-	
-	
-}
+//@media screen and (min-width: 768px) {
+//  .container {
+//    max-width: 100%;
+//  }
+//	
+//	
+//}
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px) {
   .logo {
 	width: 100px;
 	height: 23px;
-	display: none;	
+	position: absolute;
+	top: 15px;
+	left: 70px;	
 	
 }
 }

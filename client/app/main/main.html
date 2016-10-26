@@ -3,20 +3,43 @@
  <md-sidenav
      class="md-sidenav-left "
      md-component-id="left"
-     md-is-locked-open="$mdMedia('gt-md')"
+     md-is-locked-open="$mdMedia('gt-xs')"
      md-whiteframe="4">
 
 
    <md-toolbar class="md-theme-indigo" layout layout-align = "center center">
        <h1>Side Nav Left</h1>
    </md-toolbar>
-<md-list>
-      <md-button width='100%'>
+
+      
 				<md-list-item>
         <md-icon class="md-default-theme" class="material-icons">&#xE6DD;</md-icon>
         <p>Reports</p>
-				
+				<md-menu class="md-secondary">
+         <md-button class="md-icon-button">
+           <md-icon md-svg-icon="communication:message"></md-icon>
+         </md-button>
+         <md-menu-content width="4">
+           <md-menu-item>
+             <md-button>
+               Skills
+             </md-button>
+           </md-menu-item>
+           <md-menu-item>
+             <md-button>
+               Client
+             </md-button>
+           </md-menu-item>
+           <md-menu-divider></md-menu-divider>
+           <md-menu-item>
+             <md-button>
+               Recruiter
+             </md-button>
+           </md-menu-item>
+         </md-menu-content>
+       </md-menu>
       </md-button>
+				</md-list-item>
 			<md-divider></md-divider>	
 				<md-button>
 				<md-list-item>
@@ -40,7 +63,7 @@
       </md-button>
      
       
- </md-list>
+ 
 					</md-sidenav>
 
  <md-content flex layout-padding>
@@ -52,3 +75,5 @@
 
 
 </section>
+					
+					
