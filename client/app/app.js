@@ -11,3 +11,6 @@ angular.module('maerkApp', ['maerkApp.auth', 'maerkApp.admin', 'maerkApp.constan
 
     $locationProvider.html5Mode(true);
   });
+
+//add state provider
+
