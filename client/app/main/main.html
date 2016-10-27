@@ -1,3 +1,10 @@
+<style>
+ .md-button:not([active]):hover {
+    background-color: skyblue;
+  }
+
+</style>
+
 <section class="testH" layout="row" flex>
 
  <md-sidenav
@@ -11,13 +18,13 @@
        <h1>Side Nav Left</h1>
    </md-toolbar>
 
-      
+      <md-button>
 				<md-list-item>
         <md-icon class="md-default-theme" class="material-icons">&#xE6DD;</md-icon>
         <p>Reports</p>
 				<md-menu class="md-secondary">
          <md-button class="md-icon-button">
-           <md-icon md-svg-icon="communication:message"></md-icon>
+           <md-icon class="md-default-theme" class="material-icons">&#xE313;</md-icon>
          </md-button>
          <md-menu-content width="4">
            <md-menu-item>
@@ -34,6 +41,7 @@
            <md-menu-item>
              <md-button>
                Recruiter
+							 
              </md-button>
            </md-menu-item>
          </md-menu-content>
@@ -59,7 +67,8 @@
 				<md-list-item>
         <md-icon class="md-default-theme" class="material-icons">&#xE862;</md-icon>
         <p>Register Quarter</p>
-				
+				           
+
       </md-button>
      
       
