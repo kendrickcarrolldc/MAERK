@@ -36,10 +36,20 @@ md-content {
 	padding-bottom: 10px;
 }
 
+md-button {
+	max-width: 200px;
+}
+
 .navBardemoBasicUsage md-content .ext-content {
   padding: 50px;
   margin: 20px;
   background-color: #FFF2E0; }
+
+.layout-column .flex-33 {
+      max-width: 100%;
+      max-height: calc(100% / 3);
+    }
+
 
 
 /* Responsive: Portrait tablets and up */

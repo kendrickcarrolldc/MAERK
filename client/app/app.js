@@ -5,9 +5,12 @@ angular.module('maerkApp', ['maerkApp.auth', 'maerkApp.admin', 'maerkApp.constan
   ])
   .config(function($urlRouterProvider, $locationProvider, $mdThemingProvider) {
 		$mdThemingProvider.theme('default')
-    .primaryPalette('light-green')
+    .primaryPalette('light-blue')
     .accentPalette('grey');
     $urlRouterProvider.otherwise('/');
 
     $locationProvider.html5Mode(true);
   });
+
+//add state provider
+

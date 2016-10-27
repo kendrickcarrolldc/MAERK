@@ -1,6 +1,6 @@
 
-
 <!--
+
 <div class="navbar navbar-default navbar-static-top" ng-controller="NavbarController">
   <div class="container">
     <div class="navbar-header">
@@ -12,8 +12,6 @@
       </button>
       <a href="/" class="navbar-brand">maerk</a>
     </div>
--->
-<!--
     <div uib-collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
         <li ng-repeat="item in nav.menu" ui-sref-active="active">
@@ -21,9 +19,7 @@
         </li>
         <li ng-show="nav.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li>
       </ul>
--->
 
-<!--
       <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
         <md-nav-item ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></md-nav-item>
 
@@ -38,8 +34,8 @@
 
         <md-nav-item ng-show="nav.isLoggedIn()"><a ui-sref="logout">Logout</a></md-nav-item>
       </md-nav-bar>
--->
 			
+-->
 		
   <md-toolbar class="md-padding">
 <!--
@@ -51,7 +47,7 @@
      <div layout="row">
 			<div flex="10" layout="column" layout-align="center" md-is-locked-open="gt-md">
 			 	 <md-icon ng-click="nav.openSideNavPanel()" class="material-icons md-36 hide-gt-xs">&#xE5D2;</md-icon>	
-					<div flex> <img class='logo' src="assets/images/ksq.png" alt="ksquare logo"></div>
+					<div ui-sref="/" flex> <img class='logo' src="assets/images/ksq.png" alt="ksquare logo"></div>
 			 </div>
 			 <span flex></span>
 			
@@ -65,13 +61,8 @@
 					<i class="material-icons md-36">&#xE7FD;</i>
 					</div>
 		-->
-					<md-nav-item md-nav-click="goto('page1')" name="page1">Logout</md-nav-item>
-					<md-nav-item md-nav-sref="app.page2" name="page2">Settings</md-nav-item>
-				
-					<!-- these require actual routing with ui-router or ng-route, so they won't work in the demo
-					<md-nav-item md-nav-sref="app.page4" name="page4">Page Four</md-nav-item>
-					<md-nav-item md-nav-href="#page5" name="page5">Page Five</md-nav-item>
-					-->
+					<md-nav-item md-nav-sref="login" name="login">Login</md-nav-item>
+					<md-nav-item md-nav-sref="settings" name="settings">Settings</md-nav-item> 
 				</md-nav-bar>
 			 </div>
 
