@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var controller = require("./employee.controller.js");
+import * as auth from '../../auth/auth.service';
 //Restart Database
 
 

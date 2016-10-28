@@ -3,6 +3,7 @@
 import _ from 'lodash';
 import Employee from './employee.model';
 
+
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
   return function(entity) {
