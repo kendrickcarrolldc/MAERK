@@ -5,11 +5,11 @@ var controller = require("./employee.controller.js");
 
 
 
-router.get("/",controller.index);
-router.get("/:id",controller.show);
+router.get("/", auth.hasRole('admin'), controller.index);
+router.get("/:id", auth.isAuthenticated(), controller.show);
 //router.post("/:id",controller.save);
-router.post("/",controller.create);
-router.post("/:id",controller.update);
+router.post("/", auth.isAuthenticated(), controller.create);
+router.post("/:id", auth.isAuthenticated(), controller.update);
 
 
 
