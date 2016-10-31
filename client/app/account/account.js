@@ -30,8 +30,15 @@ angular.module('maerkApp')
         controller: 'SettingsController',
         controllerAs: 'vm',
         authenticate: true
-      });
+      })
+//		.state('employees', {
+//			url: '/employees',
+//			templateUrl: 'app/sidenav/employee/employee.html',
+//			controller: 'employeesController',
+//			authenticate: true
+//		})
   })
+
   .run(function($rootScope) {
     $rootScope.$on('$stateChangeStart', function(event, next, nextParams, current) {
       if (next.name === 'logout' && current && current.name && !current.authenticate) {
