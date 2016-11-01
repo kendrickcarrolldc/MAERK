@@ -2,8 +2,14 @@
 	'use strict';
 
 	angular.module('maerkApp')
-		.controller('employeesController', function ($scope, $mdToast) {
+		.controller('employeesController', function ($scope, $mdToast, EmployeeService) {
 
+		
+		EmployeeService.get({id: 1}, function(data) {
+			$scope.post = data;
+		})
+		
+		
 			$scope.employeeList = [
 				{
 					id: 1,
