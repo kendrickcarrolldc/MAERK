@@ -30,8 +30,9 @@ angular.module('maerkApp')
         controller: 'SettingsController',
         controllerAs: 'vm',
         authenticate: true
-      });
+      })
   })
+
   .run(function($rootScope) {
     $rootScope.$on('$stateChangeStart', function(event, next, nextParams, current) {
       if (next.name === 'logout' && current && current.name && !current.authenticate) {
