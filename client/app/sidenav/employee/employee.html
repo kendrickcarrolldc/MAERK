@@ -1,14 +1,49 @@
+<md-content flex>
+      <md-toolbar layout="row">
+        <div class="md-toolbar-tools">
+         
+					<md-input-container layout="row" md-theme="input" flex>
+            <label>&nbsp;</label>
+            <input ng-model="employeeName" placeholder="enter search">
+          </md-input-container>
+            <ng-md-icon icon="search"></ng-md-icon>
+<!--
+          <md-button aria-label="Open Settings" ng-click="showListBottomSheet($event)">
+            <ng-md-icon icon="more_vert"></ng-md-icon>
+          </md-button>
+--> 		<md-select ng-model="selectedEmployee">
+					<md-option ng-value="employee" ng-repeat="employee in employeeList"><em>{{employee.name}}</em></md-option>
+<!--
+					<md-option><em>client</em></md-option>
+					<md-option><em>skills</em></md-option>
+					<md-option><em>sales</em></md-option>
+					<md-option><em>recruiter</em></md-option>
+					<md-option><em>revenue</em></md-option>
+-->
+					</md-select>
+					
+        </div>
+        
+      </md-toolbar>
+     <div ng-hide="true">
+                {{(filteredEmployees = (employeeList | filter: employeeName))}}
+            </div>
+
+</md-content>
 <div layout-margin flex>
 	<!--<h1>Hello</h1>-->
 
-
-	<mdt-table paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" mdt-row="{
-                      data: employeeList,
+	
+	<mdt-table table-card="{visible: true, title: 'Ksquare Employees', columnSelector: true}"
+             alternate-headers="'contextual'"
+						 
+						 paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" mdt-row="{
+                      data: filteredEmployees,
                       'column-keys': [
                           
                           'name',
                           'client',
-                          'skill',
+                          'skills',
                           'sales',
                           'recruiter',
                           'revenue'
@@ -25,3 +60,9 @@
 		</mdt-header-row>
 	</mdt-table>
 </div>
+				
+				
+				
+			
+  
+   
