@@ -3,11 +3,12 @@
 angular.module('maerkApp')
   .config(function($stateProvider) {
     $stateProvider.state('main', {
-      url: '/',
+      url: '/dashboard',
       template: '<main class="flex layout column"></main>',
-			authenticate: true
+			authenticate: true,
+			abstract:true
     })
-	
+
 	.state('main.employees', {
 			url: '/employees',
 			templateUrl: 'app/sidenav/employee/employee.html',
@@ -17,4 +18,3 @@ angular.module('maerkApp')
 		})
   });
 
-  

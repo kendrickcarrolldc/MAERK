@@ -60,5 +60,7 @@
 					revenue: 1000
 					}
 					]
+			
+			$scope.selectedEmployee = {id: Number, name: String, client: String};
 		});
 }());

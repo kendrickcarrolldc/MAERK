@@ -31,12 +31,6 @@ angular.module('maerkApp')
         controllerAs: 'vm',
         authenticate: true
       })
-//		.state('employees', {
-//			url: '/employees',
-//			templateUrl: 'app/sidenav/employee/employee.html',
-//			controller: 'employeesController',
-//			authenticate: true
-//		})
   })
 
   .run(function($rootScope) {
