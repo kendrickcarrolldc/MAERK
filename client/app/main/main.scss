@@ -5,6 +5,7 @@
 #banner {
   border-bottom: none;
   margin-top: -20px;
+	display: flex;
 }
 
 #banner h1 {
@@ -14,7 +15,7 @@
 }
 
 .hero-unit {
-  position: relative;
+//  position: relative;
   padding: 30px 15px;
   color: #F5F5F5;
   text-align: center;
@@ -25,3 +26,12 @@
 .navbar-text {
   margin-left: 15px;
 }
+
+
+
+//#sidebar {
+//	position: absolute;
+//	background-color: grey;
+//	width: 300px;
+//}
+

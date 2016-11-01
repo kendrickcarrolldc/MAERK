@@ -1,3 +1,6 @@
+
+<!--
+
 <div class="navbar navbar-default navbar-static-top" ng-controller="NavbarController">
   <div class="container">
     <div class="navbar-header">
@@ -17,13 +20,71 @@
         <li ng-show="nav.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li>
       </ul>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
-        <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></li>
-        <li ng-show="nav.isLoggedIn()"><p class="navbar-text">Hello {{ nav.getCurrentUser().name }}</p> </li>
-        <li ng-show="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
-        <li ng-show="nav.isLoggedIn()"><a ui-sref="logout">Logout</a></li>
-      </ul>
+      <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+        <md-nav-item ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></md-nav-item>
+
+        <md-nav-item ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></md-nav-item>
+
+
+        <md-nav-item ng-show="nav.isLoggedIn()"><p class="navbar-text">Hello {{ nav.getCurrentUser().name }}</p> </md-nav-item>
+
+
+        <md-nav-item ng-show="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></md-nav-item>
+
+
+        <md-nav-item ng-show="nav.isLoggedIn()"><a ui-sref="logout">Logout</a></md-nav-item>
+      </md-nav-bar>
+			
+-->
+		
+  <md-toolbar class="md-padding">
+<!--
+		<img src="assets/images/ksq.png" alt="I'm Yeoman">
+		<i class="material-icons md-36">&#xE8B8;</i>
+<i class="material-icons md-36">&#xE7FD;</i>
+-->
+		 
+     <div layout="row">
+			<div flex="10" layout="column" layout-align="center" md-is-locked-open="gt-md">
+			 	 <md-icon ng-click="nav.openSideNavPanel()" class="material-icons md-36 hide-gt-xs">&#xE5D2;</md-icon>	
+					<div ui-sref="/" flex> <img class='logo' src="assets/images/ksq.png" alt="ksquare logo"></div>
+			 </div>
+			 <span flex></span>
+			
+			 <div flex='none'>
+				 
+			 	 <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+				
+		<!--
+				<div class='mIcons'>
+					<i class="material-icons md-36">&#xE8B8;</i>
+					<i class="material-icons md-36">&#xE7FD;</i>
+					</div>
+		-->
+					<md-nav-item ng-show="nav.isLoggedIn()" md-nav-sref="settings" >Settings</md-nav-item>
+					<md-nav-item ng-show="nav.isLoggedIn()" md-nav-sref="logout">Logout</md-nav-item>
+<!--        <md-nav-item ng-hide="nav.isLoggedIn()"><a ui-sref="login">Logout</a></md-nav-item>-->
+
+<!--					<md-nav-item md-nav-sref="settings" name="settings">Settings</md-nav-item> -->
+				</md-nav-bar>
+			 </div>
+
+			 
+		</div>
+
+    
+    <div class="ext-content">
+<!--
+      External content for 
+			`<span>{{currentNavItem}}</span>`
+-->
+    </div>
+  </md-toolbar>
     </div>
   </div>
 </div>
+
+
+
+
+
