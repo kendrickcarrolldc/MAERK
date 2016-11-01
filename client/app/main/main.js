@@ -6,7 +6,7 @@ angular.module('maerkApp')
       url: '/dashboard',
       template: '<main class="flex layout column"></main>',
 			authenticate: true,
-			abstract:truegi
+			abstract:true
     })
 	
 	.state('main.employees', {
