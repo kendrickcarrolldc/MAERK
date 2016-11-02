@@ -3,7 +3,7 @@
 (function() {
 
   function EmployeeResource($resource) {
-    return $resource('/app/sidenav/employee/:id/:controller', {id: '@_id'}, {
+    return $resource('/api/employee/:id/:controller', {id: '@_id'}, {
       
       get: {
         method: 'GET',
