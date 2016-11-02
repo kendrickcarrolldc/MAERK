@@ -1,4 +1,4 @@
-<md-content layout="column" flex>
+<md-content layout="column" layout-padding flex>
 	<md-content >
 					<md-toolbar layout="row">
 						<div class="md-toolbar-tools">
@@ -20,27 +20,29 @@
 	<md-content >
 		<md-content   >
 			<mdt-table paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" mdt-row="{
-												data: filteredEmployees,
-												'column-keys': [
-
-														'name',
-														'client',
-														'skills',
-														'sales',
-														'recruiter',
-														'revenue'
-
-												]
-												}" >
-			<mdt-header-row>
-				<mdt-column align-rule="right">Name</mdt-column>
-				<mdt-column align-rule="right">Client</mdt-column>
-				<mdt-column align-rule="right">Skill</mdt-column>
-				<mdt-column align-rule="right">Sales</mdt-column>
-				<mdt-column align-rule="right">Recruiter</mdt-column>
-				<mdt-column align-rule="right">Revenue</mdt-column>
-			</mdt-header-row>
-		</mdt-table>
+                      data: filteredEmployees,
+                      'column-keys': [
+                          
+                          'first_name',
+												'last_name',																																			
+                          'client',
+                          'skill',
+                          'placement_type',
+                          'recruiter',
+                          'revenue'
+                          
+                      ]
+                      }">
+		<mdt-header-row>
+			<mdt-column align-rule="right">First Name</mdt-column>
+			<mdt-column align-rule="right">Last Name</mdt-column>
+			<mdt-column align-rule="right">Client</mdt-column>
+			<mdt-column align-rule="right">Skill</mdt-column>
+			<mdt-column align-rule="right">Placement</mdt-column>
+			<mdt-column align-rule="right">Recruiter</mdt-column>
+			<mdt-column align-rule="right">Revenue</mdt-column>
+		</mdt-header-row>
+	</mdt-table>
 		</md-content>
 	
 	</md-content>
@@ -57,9 +59,10 @@
                       data: filteredEmployees,
                       'column-keys': [
                           
-                          'name',
+                          'first_name',
+												'last_name',																																			
                           'client',
-                          'skills',
+                          'skill',
                           'sales',
                           'recruiter',
                           'revenue'
@@ -67,7 +70,8 @@
                       ]
                       }">
 		<mdt-header-row>
-			<mdt-column align-rule="right">Name</mdt-column>
+			<mdt-column align-rule="right">First Name</mdt-column>
+			<mdt-column align-rule="right">Last Name</mdt-column>
 			<mdt-column align-rule="right">Client</mdt-column>
 			<mdt-column align-rule="right">Skill</mdt-column>
 			<mdt-column align-rule="right">Sales</mdt-column>
