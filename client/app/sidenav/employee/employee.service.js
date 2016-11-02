@@ -19,12 +19,7 @@
 			
 			update: {
         method: 'PUT',
-        
       }
-					
-			
-					
-					
     });
   }
 

@@ -5,9 +5,9 @@
 		.controller('employeesController', function ($scope, $mdToast, EmployeeService) {
 
 		
-		EmployeeService.get({id: 1}, function(data) {
-			$scope.post = data;
-		})
+//		EmployeeService.get({id: 1}, function(data) {
+//			$scope.post = data;
+//		})
 		
 		$scope.employeeList = EmployeeService.query();
 //			$scope.employeeList = [
@@ -67,6 +67,6 @@
 //					}
 					
 			
-			$scope.selectedEmployee = {id: Number, name: String, client: String};
+//			$scope.selectedEmployee = {id: Number, name: String, client: String};
 		});
 }());
