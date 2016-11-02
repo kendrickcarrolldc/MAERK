@@ -4,7 +4,7 @@ angular.module('maerkApp')
   .config(function($stateProvider) {
     $stateProvider.state('main', {
       url: '/dashboard',
-      template: '<main flex"></main>',
+      template: '<main flex layout="row"></main>',
 			authenticate: true,
 			abstract:true
     })
