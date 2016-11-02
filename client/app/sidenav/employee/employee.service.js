@@ -10,13 +10,10 @@
         params: {
           id: '@_id'
         }
-      },
-					
+      },		
 			create: {
-        method: 'POST',
-        
+        method: 'POST',   
       },
-			
 			update: {
         method: 'PUT',
       }

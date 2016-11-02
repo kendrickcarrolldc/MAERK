@@ -8,7 +8,7 @@ angular.module('maerkApp')
 			authenticate: true,
 			abstract:true
     })
-	
+
 	.state('main.employees', {
 			url: '/employees',
 			templateUrl: 'app/sidenav/employee/employee.html',
@@ -18,4 +18,3 @@ angular.module('maerkApp')
 		})
   });
 
-  

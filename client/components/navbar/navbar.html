@@ -61,8 +61,11 @@
 					<i class="material-icons md-36">&#xE7FD;</i>
 					</div>
 		-->
-					<md-nav-item md-nav-sref="login" name="login">Login</md-nav-item>
-					<md-nav-item md-nav-sref="settings" name="settings">Settings</md-nav-item> 
+					<md-nav-item ng-show="nav.isLoggedIn()" md-nav-sref="settings" >Settings</md-nav-item>
+					<md-nav-item ng-show="nav.isLoggedIn()" md-nav-sref="logout">Logout</md-nav-item>
+<!--        <md-nav-item ng-hide="nav.isLoggedIn()"><a ui-sref="login">Logout</a></md-nav-item>-->
+
+<!--					<md-nav-item md-nav-sref="settings" name="settings">Settings</md-nav-item> -->
 				</md-nav-bar>
 			 </div>
 
