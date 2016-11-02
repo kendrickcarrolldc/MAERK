@@ -3,46 +3,28 @@
 (function() {
 
   function EmployeeResource($resource) {
-    return $resource('/sidenav/employee/:id/:controller', {id: '@_id'}, {
+    return $resource('/app/sidenav/employee/:id/:controller', {id: '@_id'}, {
       
-					
-					EmployeeService.query(function(data) {
-					$
-				})
       get: {
         method: 'GET',
         params: {
-          id: 'me'
+          id: '@_id'
         }
       },
 					
-					 save: {
+			create: {
         method: 'POST',
-        params: {
-          id: 'me'
-        }
+        
       },
-					
-					 query: {
-        method: 'GET',
-        params: {
-          id: 'me'
-        }
-      },
-					
-					 remove: {
-        method: 'DELETE',
-        params: {
-          id: 'me'
-        }
-      },
-					
-					 delete: {
-        method: 'DELETE',
-        params: {
-          id: 'me'
-        }
+			
+			update: {
+        method: 'PUT',
+        
       }
+					
+			
+					
+					
     });
   }
 
