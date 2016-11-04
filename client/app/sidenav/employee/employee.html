@@ -1,26 +1,58 @@
 <md-content layout="column" layout-padding flex>
-	<md-content >
-					<md-toolbar layout="row">
-						<div class="md-toolbar-tools">
+	<md-content>
+		<md-toolbar layout="row">
+			<div class="md-toolbar-tools">
 
-							<md-input-container layout="row" md-theme="input" flex>
-								<label>&nbsp;</label>
-								<input ng-model="employeeName" placeholder="enter search">
-							</md-input-container>
-								<ng-md-icon icon="search"></ng-md-icon>
+				<md-input-container layout="row" md-theme="input" flex>
+					<label>&nbsp;</label>
+					<input ng-model="employeeName" placeholder="enter search">
+				</md-input-container>
+				<ng-md-icon icon="search"></ng-md-icon>
 
-						</div>
+			</div>
 
-					</md-toolbar>
-				 <div ng-hide="true">
-										{{(filteredEmployees = (employeeList | filter: employeeName))}}
-								</div>
+		</md-toolbar>
+		<div ng-hide="true">
+			{{(filteredEmployees = (employeeList | filter: employeeName))}}
+		</div>
 
 	</md-content>
-	<md-content >
-		<md-content   >
-			<mdt-table paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" mdt-row="{
+	<md-content>
+		<md-content>
+			<md-toolbar>
+				
+				<div class="md-toolbar-tools" layout="row" layout-align="end center">
+					<h4 layout="row" layout-align="start">Ksquare Employees</h4>
+					<span flex></span>
+					
+					
+					<select ng-show="showStatus">
+						<option value="activate">Activate</option>
+						<option value="deactivate">Deactivate</option>	
+					<select>
+
+					<md-button class="md-icon-button" ng-show="showEdit">
+					<ng-md-icon icon="edit"></ng-md-icon>
+					</md-button>
+										
+					<md-button class="md-icon-button" ng-click="showConfirm($event)" ng-show="showDelete">
+					<ng-md-icon icon="delete"></ng-md-icon>
+					</md-button>
+				
+				
+				</div>
+			</md-toolbar>
+			
+		
+			<mdt-table 
+								 
+								 selectable-rows="true" 
+								 paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" 
+								 selected-row-callback="selectedRowCallback(rows)" 
+								 
+								 mdt-row="{
                       data: filteredEmployees,
+										'table-row-id-key': '_id',																																														 
                       'column-keys': [
                           
                           'first_name',
@@ -33,18 +65,18 @@
                           
                       ]
                       }">
-		<mdt-header-row>
-			<mdt-column align-rule="right">First Name</mdt-column>
-			<mdt-column align-rule="right">Last Name</mdt-column>
-			<mdt-column align-rule="right">Client</mdt-column>
-			<mdt-column align-rule="right">Skill</mdt-column>
-			<mdt-column align-rule="right">Placement</mdt-column>
-			<mdt-column align-rule="right">Recruiter</mdt-column>
-			<mdt-column align-rule="right">Revenue</mdt-column>
-		</mdt-header-row>
-	</mdt-table>
+				<mdt-header-row>
+					<mdt-column align-rule="right">First Name</mdt-column>
+					<mdt-column align-rule="right">Last Name</mdt-column>
+					<mdt-column align-rule="right">Client</mdt-column>
+					<mdt-column align-rule="right">Skill</mdt-column>
+					<mdt-column align-rule="right">Placement</mdt-column>
+					<mdt-column align-rule="right">Recruiter</mdt-column>
+					<mdt-column align-rule="right">Revenue</mdt-column>
+				</mdt-header-row>
+			</mdt-table>
 		</md-content>
-	
+
 	</md-content>
 </md-content>
 

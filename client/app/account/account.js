@@ -3,7 +3,7 @@
 angular.module('maerkApp')
   .config(function($stateProvider) {
     $stateProvider.state('login', {
-        url: '/login',
+        url: '/',
         templateUrl: 'app/account/login/login.html',
         controller: 'LoginController',
         controllerAs: 'vm'
