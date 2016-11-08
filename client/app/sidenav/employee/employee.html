@@ -17,13 +17,20 @@
 		</div>
 
 	</md-content>
+
+	
 	<md-content>
 		<md-content>
 			<md-toolbar>
 				
 				<div class="md-toolbar-tools" layout="row" layout-align="end center">
-					<h4 layout="row" layout-align="start">Ksquare Employees</h4>
-					<span flex></span>
+					<h4 layout="row" layout-align="start" style="padding-right: 5px">Ksquare Employees</h4>
+					
+					<md-button class="md-icon-button" ng-click="showCustomGreeting()">
+						<ng-md-icon size="28" style="fill: white;" icon="person_add"></ng-md-icon>
+					</md-button>
+					
+					<span style="fill: white;" flex></span>
 					
 					
 					<select ng-show="showStatus">
@@ -42,7 +49,7 @@
 				
 				</div>
 			</md-toolbar>
-			
+		
 		
 			<mdt-table 
 								 
@@ -73,6 +80,7 @@
 					<mdt-column align-rule="right">Placement</mdt-column>
 					<mdt-column align-rule="right">Recruiter</mdt-column>
 					<mdt-column align-rule="right">Revenue</mdt-column>
+						
 				</mdt-header-row>
 			</mdt-table>
 		</md-content>
@@ -80,44 +88,3 @@
 	</md-content>
 </md-content>
 
-<!--
-<md-content flex layout="column">
-	
-<md-content layout-margin  >
-	
-
-
-	<mdt-table paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" mdt-row="{
-                      data: filteredEmployees,
-                      'column-keys': [
-                          
-                          'first_name',
-												'last_name',																																			
-                          'client',
-                          'skill',
-                          'sales',
-                          'recruiter',
-                          'revenue'
-                          
-                      ]
-                      }">
-		<mdt-header-row>
-			<mdt-column align-rule="right">First Name</mdt-column>
-			<mdt-column align-rule="right">Last Name</mdt-column>
-			<mdt-column align-rule="right">Client</mdt-column>
-			<mdt-column align-rule="right">Skill</mdt-column>
-			<mdt-column align-rule="right">Sales</mdt-column>
-			<mdt-column align-rule="right">Recruiter</mdt-column>
-			<mdt-column align-rule="right">Revenue</mdt-column>
-		</mdt-header-row>
-	</mdt-table>
-</md-content>
-
-				
-			
-  
-   
-
-
-</md-content>
--->

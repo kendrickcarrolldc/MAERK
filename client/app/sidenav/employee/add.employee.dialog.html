@@ -1,0 +1,139 @@
+<md-dialog flex="60" style="max-height: 75%">
+	<md-toolbar layout-padding layout="column">
+
+		<h1 class="md-toolbar-tools">Add Employee</h1>
+	</md-toolbar>
+
+	<!--	employeeName IS THE NAME OF THE OBJECT ALL OF THESE VALUES ARE BEING WRITTEN TO-->
+
+	<md-dialog-content id="inputContainer" class="inputDemo" ng-cloak>
+
+		<form name="employeeForm">
+			<div layout-padding layout="row">
+				<md-input-container class="md-block" flex="50">
+					<label>First Name</label>
+					<input required name="userName" ng-model="vm.employeeName.first_name">
+				</md-input-container>
+
+				<md-input-container class="md-block" flex="50">
+					<label>Last Name</label>
+					<input required name="userName" ng-model="vm.employeeName.last_name">
+				</md-input-container>
+			</div>
+
+			<div layout-padding layout="row">
+				<md-input-container class="md-block" flex="50">
+					<label>Client</label>
+					<input required name="userName" ng-model="vm.employeeName.client">
+
+				</md-input-container>
+
+				<md-input-container class="md-block" flex="50">
+					<label>Skill</label>
+					<input required name="userName" ng-model="vm.employeeName.skill">
+
+				</md-input-container>
+			</div>
+
+			<div layout-padding layout="row">
+				<md-input-container class="md-block" flex="50">
+					<label>Recruiter</label>
+					<input required name="userName" ng-model="vm.employeeName.recruiter">
+				</md-input-container>
+
+				<md-input-container class="md-block" flex="50">
+					<label>Placement Type</label>
+					<input required name="userName" ng-model="vm.employeeName.placement_type">
+				</md-input-container>
+			</div>
+
+			<div layout-padding layout="row">
+				
+				<md-input-container class="md-block" flex="50">
+                  <label>Salary</label>
+                  <input required name="userName" ng-model="vm.employeeName.salary">
+               </md-input-container>
+							
+
+				<md-input-container class="md-block" flex="50">
+					<label>Insurance</label>
+					<input required name="userName" type="" ng-model="vm.employeeName.insurance">
+				</md-input-container>
+			</div>
+
+			<div layout-padding layout="row">
+				<md-input-container class="md-block" flex="50">
+					<label>Relocation</label>
+					<input required name="userName" ng-model="vm.employeeName.relocation">
+
+				</md-input-container>
+
+				<md-input-container class="md-block" flex="50">
+					<label>Immigration</label>
+					<input required name="userName" ng-model="vm.employeeName.immigration">
+
+				</md-input-container>
+
+			</div>
+
+			<div layout-padding layout="row">
+				<md-input-container class="md-block" flex="50">
+					<label>Pay Vacation Cost</label>
+					<input required name="userName" ng-model="vm.employeeName.pay_vacation_cost">
+
+				</md-input-container>
+
+				<md-input-container class="md-block" flex="50">
+					<label>Hourly cost</label>
+					<input required name="userName" ng-model="vm.employeeName.ksquare_hourly_cost">
+
+				</md-input-container>
+			</div>
+
+			<div layout-padding layout="row">
+				<md-input-container class="md-block" flex="50">
+					<label>Target Bill Rate</label>
+					<input required name="userName" ng-model="vm.employeeName.target_bill_rate">
+
+				</md-input-container>
+
+				<md-input-container class="md-block" flex="50">
+					<label>Client Bill Pay</label>
+					<input required name="userName" ng-model="vm.employeeName.client_bill_pay">
+
+				</md-input-container>
+			</div>	
+<!--
+               <md-input-container class="md-block">
+                  <label>Email</label>
+                  <input required type="email" name="userEmail" ng-model="project.userEmail"
+                     minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+                  <div ng-messages="projectForm.userEmail.$error" role="alert">
+                     <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                        Your email must be between 10 and 100 characters long and should be a valid email address.
+                     </div>
+                  </div>
+               </md-input-container>
+               <md-input-container class="md-block">
+                  <label>Comments</label>
+                  <input md-maxlength="300" required name="comments" ng-model="project.comments">
+                  <div ng-messages="projectForm.comments.$error">
+                     <div ng-message="required">This is required.</div>
+                     <div ng-message="md-maxlength">The comments has to be less than 300 characters long.</div>
+                  </div>
+               </md-input-container>     
+-->
+			<div layout-padding layout="row" layout-align="space-around center">
+							<md-dialog-actions flex="70">
+								<md-button ng-click="addEmployee(vm.employeeName)">
+								Submit
+								</md-button>
+							
+							</md-dialog-actions>
+					</div> 
+            </form>
+         </md-content>
+      </md-dialog-content>
+
+
+</md-dialog>

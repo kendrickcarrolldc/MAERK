@@ -47,6 +47,7 @@ function handleEntityNotFound(res) {
 function handleError(res, statusCode) {
   statusCode = statusCode || 500;
   return function(err) {
+		console.log(err) // this will console log the error in the terminal
     res.status(statusCode).send(err);
   };
 }

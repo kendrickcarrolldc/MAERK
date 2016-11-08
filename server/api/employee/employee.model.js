@@ -70,7 +70,7 @@ var employeeSchema = new mongoose.Schema({
 	
 	activate: {
 		type: Boolean,
-		required: true
+		default: true
 	},
 		
 })

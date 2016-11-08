@@ -2,8 +2,10 @@
 
 (function() {
 
-  function EmployeeResource($resource) {
-    return $resource('/api/employee/:id/:controller', {id: '@_id'}, {
+	angular.module('maerkApp.auth')
+    .factory('EmployeeFact', function($resource, $mdDialog) {
+		
+	var employeeResource = $resource('/api/employee/:id/:controller', {id: '@_id'}, {
       
       get: {
         method: 'GET',
@@ -17,9 +19,27 @@
 			update: {
         method: 'PUT',
       }
+		
     });
-  }
-
-  angular.module('maerkApp.auth')
-    .factory('EmployeeService', EmployeeResource);
+		
+//	$scope.EmployeeOne = Employee.get({id: '@_id'}
+	
+	var employeeList = employeeResource.query();	
+		
+	return {
+		employeeList: employeeList,
+		employeeResource: employeeResource,
+		
+		create: function (emp) {
+			new employeeResource(emp).$save().then(function(newHire){
+				employeeList.push(newHire);
+				
+				
+				
+			})
+		}
+		
+		
+	}
+	});
 })();

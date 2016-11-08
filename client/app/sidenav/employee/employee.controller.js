@@ -2,14 +2,41 @@
 	'use strict';
 
 	angular.module('maerkApp')
-		.controller('employeesController', function ($scope, $mdToast, EmployeeService, $mdDialog, $mdSelect) {
+	
+		.controller('employeesController', function ($scope, $mdToast, EmployeeFact, $mdDialog, $mdSelect) {
 
 		
-//		EmployeeService.get({id: 1}, function(data) {
-//			$scope.post = data;
-//		})
-		
+		$scope.showCustomGreeting = function() {
+			$mdDialog.show({
+          clickOutsideToClose: true,
+          scope: $scope,        // use parent scope in template
+          preserveScope: true,  // do not forget this if use parent scope
 
+          // Since GreetingController is instantiated with ControllerAs syntax
+          // AND we are passing the parent '$scope' to the dialog, we MUST
+          // use 'vm.<xxx>' in the template markup
+
+          templateUrl: './app/sidenav/employee/add.employee.dialog.html',
+				
+          controller: function DialogController($scope, $mdDialog,EmployeeFact) {
+            $scope.closeDialog = function() {
+							
+              $mdDialog.hide();
+            }
+						$scope.addEmployee = function(newHire) {
+							
+							EmployeeFact.create(newHire);
+							console.log(newHire);
+
+							$mdDialog.hide()
+						}
+
+          },
+				controllerAs:'vm'
+       });
+    }
+		
+//Employee toolbar functionality
 		
 		$scope.showEdit = false;
 		$scope.showDelete = false;
@@ -40,10 +67,11 @@
 			}
 		}
 		
-		$scope.employeeList = EmployeeService.query();
+		$scope.employeeList = EmployeeFact.employeeList;
 		
+
 		
-		//Delete confirmation code-------->		
+	//Delete confirmation code-------->		
 
 //  $scope.showConfirm = function(ev) {
 //    // Appending dialog to document.body to cover sidenav in docs app
@@ -62,6 +90,6 @@
 //    });
 //  };
 		
-
+	
 		});
 }());
