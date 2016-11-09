@@ -14,12 +14,12 @@ var employeeSchema = new mongoose.Schema({
 	},
 	
 	client: {
-		type: String,
+		type: Array,
 		required: true
 	},
 	
 	skill: {
-		type: String,
+		type: Array,
 		required: true
 	},
 	

@@ -22,17 +22,19 @@
 			</div>
 
 			<div layout-padding layout="row">
-				<md-input-container class="md-block" flex="50">
+				<md-content class="md-block" flex="50">
 					<label>Client</label>
-					<input required name="userName" ng-model="vm.employeeName.client">
+					<md-chips ng-model="vm.employeeName.client" md-separator-keys="vm.customKeys"></md-chips>
+					<br/>
+				</md-content>
 
-				</md-input-container>
 
-				<md-input-container class="md-block" flex="50">
+				<md-content class="md-block" flex="50">
 					<label>Skill</label>
-					<input required name="userName" ng-model="vm.employeeName.skill">
+					<md-chips ng-model="vm.employeeName.skill" md-separator-keys="vm.customKeys"></md-chips>
+					<br/>
 
-				</md-input-container>
+				</md-content>
 			</div>
 
 			<div layout-padding layout="row">
@@ -48,12 +50,12 @@
 			</div>
 
 			<div layout-padding layout="row">
-				
+
 				<md-input-container class="md-block" flex="50">
-                  <label>Salary</label>
-                  <input required name="userName" ng-model="vm.employeeName.salary">
-               </md-input-container>
-							
+					<label>Salary</label>
+					<input required name="userName" ng-model="vm.employeeName.salary">
+				</md-input-container>
+
 
 				<md-input-container class="md-block" flex="50">
 					<label>Insurance</label>
@@ -102,8 +104,8 @@
 					<input required name="userName" ng-model="vm.employeeName.client_bill_pay">
 
 				</md-input-container>
-			</div>	
-<!--
+			</div>
+			<!--
                <md-input-container class="md-block">
                   <label>Email</label>
                   <input required type="email" name="userEmail" ng-model="project.userEmail"
@@ -124,16 +126,16 @@
                </md-input-container>     
 -->
 			<div layout-padding layout="row" layout-align="space-around center">
-							<md-dialog-actions flex="70">
-								<md-button ng-click="addEmployee(vm.employeeName)">
-								Submit
-								</md-button>
-							
-							</md-dialog-actions>
-					</div> 
-            </form>
-         </md-content>
-      </md-dialog-content>
+				<md-dialog-actions flex="70">
+					<md-button ng-click="vm.addEmployee(vm.employeeName)">
+						Submit
+					</md-button>
+
+				</md-dialog-actions>
+			</div>
+		</form>
+		</md-content>
+	</md-dialog-content>
 
 
 </md-dialog>

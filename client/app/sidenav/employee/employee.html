@@ -5,7 +5,7 @@
 
 				<md-input-container layout="row" md-theme="input" flex>
 					<label>&nbsp;</label>
-					<input ng-model="employeeName" placeholder="enter search">
+					<input ng-model="vm.employeeName" placeholder="enter search">
 				</md-input-container>
 				<ng-md-icon icon="search"></ng-md-icon>
 
@@ -13,57 +13,51 @@
 
 		</md-toolbar>
 		<div ng-hide="true">
-			{{(filteredEmployees = (employeeList | filter: employeeName))}}
+			{{(filteredEmployees = (vm.employeeList | filter: vm.employeeName))}}
 		</div>
 
 	</md-content>
 
-	
+
 	<md-content>
 		<md-content>
 			<md-toolbar>
-				
+
 				<div class="md-toolbar-tools" layout="row" layout-align="end center">
 					<h4 layout="row" layout-align="start" style="padding-right: 5px">Ksquare Employees</h4>
-					
-					<md-button class="md-icon-button" ng-click="showCustomGreeting()">
+
+					<md-button class="md-icon-button" ng-click="vm.showCustomGreeting()">
 						<ng-md-icon size="28" style="fill: white;" icon="person_add"></ng-md-icon>
 					</md-button>
-					
-					<span style="fill: white;" flex></span>
-					
-					
-					<select ng-show="showStatus">
-						<option value="activate">Activate</option>
-						<option value="deactivate">Deactivate</option>	
-					<select>
 
-					<md-button class="md-icon-button" ng-show="showEdit">
-					<ng-md-icon icon="edit"></ng-md-icon>
-					</md-button>
-										
-					<md-button class="md-icon-button" ng-click="showConfirm($event)" ng-show="showDelete">
-					<ng-md-icon icon="delete"></ng-md-icon>
-					</md-button>
-				
-				
+					<span style="fill: white;" flex></span>
+
+
+					<select ng-show="vm.showStatus">
+						<option value="activate">Activate</option>
+						<option value="deactivate">Deactivate</option>
+						<select>
+
+							<md-button class="md-icon-button" ng-show="vm.showEdit">
+								<ng-md-icon icon="edit"></ng-md-icon>
+							</md-button>
+
+							<md-button class="md-icon-button" ng-click="vm.showConfirm($event)" ng-show="vm.showDelete">
+								<ng-md-icon icon="delete"></ng-md-icon>
+							</md-button>
+
+
 				</div>
 			</md-toolbar>
-		
-		
-			<mdt-table 
-								 
-								 selectable-rows="true" 
-								 paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" 
-								 selected-row-callback="selectedRowCallback(rows)" 
-								 
-								 mdt-row="{
+
+
+			<mdt-table selectable-rows="true" paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" selected-row-callback="vm.selectedRowCallback(rows)" mdt-row="{
                       data: filteredEmployees,
 										'table-row-id-key': '_id',																																														 
                       'column-keys': [
                           
                           'first_name',
-												'last_name',																																			
+												'last_name',																															
                           'client',
                           'skill',
                           'placement_type',
@@ -80,11 +74,14 @@
 					<mdt-column align-rule="right">Placement</mdt-column>
 					<mdt-column align-rule="right">Recruiter</mdt-column>
 					<mdt-column align-rule="right">Revenue</mdt-column>
-						
+
 				</mdt-header-row>
+				
+				<mdt-custom-cell column-key="skill">
+					<span ng-class="{}">{{value}}</span>
+				</mdt-custom-cell>
+				<mdt-custom-cell column-key="client">
+					<span ng-class="{}">{{value}}</span>
+				</mdt-custom-cell>
+
 			</mdt-table>
-		</md-content>
-
-	</md-content>
-</md-content>
-
