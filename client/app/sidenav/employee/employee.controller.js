@@ -5,81 +5,86 @@
 
 	.controller('employeesController', function ($mdToast, EmployeeFact, $mdDialog, $mdSelect, $mdConstant) {
 
-	this.employeeList = EmployeeFact.employeeList;
-		
-	
+		this.employeeList = EmployeeFact.employeeList;
+
+//		this.addControls = true;
+//		this.editControls = false;
 //Add employee dialog functionality
-		this.showCustomGreeting = function () {
+		this.showAddForm = function () {
+			
 			$mdDialog.show({
 				clickOutsideToClose: true,
-//				scope: $scope, // use parent scope in template
-				preserveScope: true, // do not forget this if use parent scope
-
-				// Since GreetingController is instantiated with ControllerAs syntax
-				// AND we are passing the parent '$scope' to the dialog, we MUST
-				// use 'vm.<xxx>' in the template markup
-
-				templateUrl: './app/sidenav/employee/add.employee.dialog.html',
-
-// Dialog Controller instantiation
-				controller: function DialogController( $mdDialog, EmployeeFact, $mdConstant) {
-
-					this.employeeName={};
-					this.customKeys = [$mdConstant.KEY_CODE.ENTER, $mdConstant.KEY_CODE.COMMA];
-					this.employeeName.skill = [];
-					this.employeeName.client = [];
-
-//close form function
-					this.closeDialog = function () {
-						$mdDialog.hide();
-					}
-
-//Add employee function
-					this.addEmployee = function (newHire) {
-						var semicolon = 186;
-//						this.customKeys = [$mdConstant.KEY_CODE.ENTER, $mdConstant.KEY_CODE.COMMA, semicolon];
-//						this.newHire = {}
-//						this.newHire.skill = ["two"]
-//						this.newHire.client = ["two"]
-						EmployeeFact.create(newHire);
-						console.log(newHire);
-
-						$mdDialog.hide()
-					}
-
+				preserveScope: true,
+				templateUrl: './app/sidenav/employee/add/addEmployee.html',
+				
+				// Add Controller instantiation
+				controller: 'addController',
+				controllerAs: 'vm',
+			});
+		}
+		
+// Edit funtionality		
+		this.showEditForm = function () {
+			
+			var editedEmp = null
+			for (var i = 0; i < this.employeeList.length; i++) {
+				if (this.employeeList[i]._id == selectedRow[0]) { //selectedRow[0] is just getting first value you select from the employeeList array
+					 console.log("inside")
+								editedEmp = this.employeeList[i];
+								break;
+							}
+				
+			}
+			console.log(editedEmp, selectedRow[0], this.employeeList.length)
+		//look employee that will edited
+		//selectedRow
+	$mdDialog.show({
+				clickOutsideToClose: true,
+				preserveScope: true,
+				templateUrl: './app/sidenav/employee/add/addEmployee.html',
+				locals: {
+					editedEmp: editedEmp
 				},
-				controllerAs: 'vm'
+// Edit Controller instantiation
+				controller: 'editController',
+				controllerAs: 'vm',
 			});
 		}
 
 //Employee toolbar functionality
-
 		this.showEdit = false;
 		this.showDelete = false;
 		this.showStatus = false;
 
+//declared selected row for the selectedRowCallback function
+		var selectedRow;
+		
 		this.selectedRowCallback = function (rows) {
-
-			if (rows == 0) {
-				this.showEdit = false;
-				this.showDelete = false;
-				this.showStatus = false;
-				console.log("0 rows selected");
-			} else if (rows.length == 1) {
-				this.showEdit = true;
-				this.showDelete = true;
-				this.showStatus = true;
-				console.log("1 row selected");
-			} else {
-				this.showEdit = false;
-				this.showDelete = true;
-				this.showStatus = true;
-				console.log('nothing selected')
-				console.log(rows);
+				selectedRow = rows;
+				if (rows.length == 0) {
+					this.showEdit = false;
+					this.showDelete = false;
+					this.showStatus = false;
+					console.log("0 rows selected");
+				} else if (rows.length == 1) {
+					this.showEdit = true;
+					this.showDelete = true;
+					this.showStatus = true;
+					console.log(selectedRow);
+//	
+				}
+				 else {
+					this.showEdit = false;
+					this.showDelete = true;
+					this.showStatus = true;
+					console.log('nothing selected')
+				}
 			}
-		}
-//Employee connection to database from service
-//		this.employeeList = EmployeeFact.employeeList;
+		
+	
+//		
+			//Employee connection to database from service
+			//		this.employeeList = EmployeeFact.employeeList;
 
 
 

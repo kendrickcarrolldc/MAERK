@@ -1,10 +1,11 @@
 <md-dialog flex="60" style="max-height: 75%">
 	<md-toolbar layout-padding layout="column">
 
-	<h1 class="md-toolbar-tools">Add Employee</h1>
+		<h1 class="md-toolbar-tools">Add Employee</h1>
 	</md-toolbar>
 
 	<!--	employeeName IS THE NAME OF THE OBJECT ALL OF THESE VALUES ARE BEING WRITTEN TO-->
+
 	<md-dialog-content id="inputContainer" class="inputDemo" ng-cloak>
 
 		<form name="employeeForm">
@@ -124,14 +125,30 @@
                   </div>
                </md-input-container>     
 -->
-			<div layout-padding layout="row" layout-align="space-around center">
-				<md-dialog-actions flex="70">
-					<md-button ng-click="vm.addEmployee(vm.employeeName)">
+			<md-content ng-show="vm.addControls">
+			<section layout-padding layout="row" layout-align="center center">
+					<md-button class="md-primary md-raised" ng-click="vm.addEmployee(vm.employeeName)">
 						Submit
 					</md-button>
-
-				</md-dialog-actions>
-			</div>
+				
+					<md-button class="md-primary md-raised" ng-click="vm.closeDialog()" >
+              Cancel
+            </md-button>
+			</section>
+			</md-content>
+			
+			<md-content ng-show="vm.editControls">
+			<section layout-padding layout="row" layout-align="center center">
+					<md-button class="md-primary md-raised" ng-click="vm.showConfirmSubmit()">
+						Save
+					</md-button>
+				
+					<md-button class="md-primary md-raised" ng-click="vm.closeDialog()" >
+              Cancel
+            </md-button>
+			</section>
+			</md-content>
+			
 		</form>
 		</md-content>
 	</md-dialog-content>
