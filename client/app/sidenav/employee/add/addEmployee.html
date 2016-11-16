@@ -13,7 +13,7 @@
 			<div layout-padding layout="row">
 				<md-input-container class="md-block" flex="50">
 					<label>First Name</label>
-					<input type="text" required name="userName" ng-model="vm.employeeName.first_name" required ng-pattern="/^[^\W\d_]+$/">
+					<input type="text" name="first_name" ng-model="vm.employeeName.first_name" ng-pattern="/^[^\W\d_]+$/" required>
 					 <div ng-messages="employeeForm.first_name.$error">
                 <div ng-message="required">first name is required.</div>
               </div>
@@ -21,7 +21,7 @@
 
 				<md-input-container class="md-block" flex="50">
 					<label>Last Name</label>
-					<input type="text" required name="userName" ng-model="vm.employeeName.last_name" required ng-pattern="/^[^\W\d_]+$/">
+					<input type="text" required name="last_name" ng-model="vm.employeeName.last_name" required ng-pattern="/^[^\W\d_]+$/">
 						<div ng-messages="employeeForm.last_name.$error">
                 <div ng-message="required">last name is required.</div>
               </div> 
@@ -47,7 +47,7 @@
 			<div layout-padding layout="row">
 				<md-input-container class="md-block" flex="50">
 					<label>Recruiter</label>
-					<input type="text" required name="userName" ng-model="vm.employeeName.recruiter" ng-pattern="/^[^\W\d_]+$/">
+					<input type="text" name="recruiter" ng-model="vm.employeeName.recruiter" ng-pattern="/^[^\W\d_]+$/" required>
 						 <div ng-messages="employeeForm.recruiter.$error">
                 <div ng-message="required">recruiter name is required.</div>
               </div>
@@ -70,7 +70,7 @@
 
 				<md-input-container class="md-block" flex="50">
 					<label>Salary</label>
-					<input type="number" required name="userName" ng-model="vm.employeeName.salary">
+					<input type="number" required name="salary" ng-model="vm.employeeName.salary">
 					<div ng-messages="employeeForm.salary.$error">
                 <div ng-message="required">a number value is required.</div>
               </div>
@@ -79,7 +79,7 @@
 
 				<md-input-container class="md-block" flex="50">
 					<label>Insurance</label>
-					<input type="number" required name="userName" type="" ng-model="vm.employeeName.insurance">
+					<input type="number" required name="insurance" type="" ng-model="vm.employeeName.insurance">
 					<div ng-messages="employeeForm.insurance.$error">
                 <div ng-message="required">a number value is required.</div>
               </div>
@@ -89,7 +89,7 @@
 			<div layout-padding layout="row">
 				<md-input-container class="md-block" flex="50">
 					<label>Relocation</label>
-					<input type="number" required name="userName" ng-model="vm.employeeName.relocation">
+					<input type="number" required name="relocation" ng-model="vm.employeeName.relocation">
 					<div ng-messages="employeeForm.relocation.$error">
                 <div ng-message="required">a number value is required.</div>
               </div>
@@ -97,7 +97,7 @@
 
 				<md-input-container class="md-block" flex="50">
 					<label>Immigration</label>
-					<input type="number" required name="userName" ng-model="vm.employeeName.immigration">
+					<input type="number" required name="immigration" ng-model="vm.employeeName.immigration">
 					<div ng-messages="employeeForm.relocation.$error">
                 <div ng-message="required">a number value is required.</div>
               </div>
@@ -108,7 +108,7 @@
 			<div layout-padding layout="row">
 				<md-input-container class="md-block" flex="50">
 					<label>Pay Vacation Cost</label>
-					<input type="number" required name="userName" ng-model="vm.employeeName.pay_vacation_cost">
+					<input type="number" required name="pay_vacation_cost" ng-model="vm.employeeName.pay_vacation_cost">
 					<div ng-messages="employeeForm.pay_vacation_cost.$error">
                 <div ng-message="required">a number value is required.</div>
               </div>
@@ -116,7 +116,7 @@
 
 				<md-input-container class="md-block" flex="50">
 					<label>Hourly cost</label>
-					<input type="number" required name="userName" ng-model="vm.employeeName.ksquare_hourly_cost">
+					<input type="number" required name="ksquare_hourly_cost" ng-model="vm.employeeName.ksquare_hourly_cost">
 					<div ng-messages="employeeForm.ksquare_hourly_cost.$error">
                 <div ng-message="required">a number value is required.</div>
               </div>
@@ -126,7 +126,7 @@
 			<div layout-padding layout="row">
 				<md-input-container class="md-block" flex="50">
 					<label>Target Bill Rate</label>
-					<input type="number" required name="userName" ng-model="vm.employeeName.target_bill_rate">
+					<input type="number" required name="target_bill_rate" ng-model="vm.employeeName.target_bill_rate">
 					<div ng-messages="employeeForm.target_bill_rate.$error">
                 <div ng-message="required">a number value is required.</div>
               </div>
@@ -134,7 +134,7 @@
 
 				<md-input-container class="md-block" flex="50">
 					<label>Client Bill Pay</label>
-					<input type="number" required name="userName" ng-model="vm.employeeName.client_bill_pay">
+					<input type="number" required name="client_bill_pay" ng-model="vm.employeeName.client_bill_pay">
 					<div ng-messages="employeeForm.client_bill_pay.$error">
                 <div ng-message="required">a number value is required.</div>
               </div>
