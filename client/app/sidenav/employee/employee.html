@@ -1,6 +1,8 @@
+
+
 <md-content layout="column" layout-padding flex>
 	<md-content>
-		<md-toolbar layout="row">
+		<md-toolbar layout="row" >
 			<div class="md-toolbar-tools">
 
 				<md-input-container layout="row" md-theme="input" flex>
@@ -33,10 +35,11 @@
 					<span style="fill: white;" flex></span>
 
 
-					<select ng-show="vm.showStatus">
-						<option value="activate">Activate</option>
-						<option value="deactivate">Deactivate</option>
-						<select>
+					<md-input-container>
+						<md-select name="activate" ng-model="vm.act" ng-show="vm.showStatus" aria-label="null">
+              <md-option ng-repeat=" item in vm.actOpt" ng-value="item.name" ng-click="item.fn()">{{item.name}}</md-option>
+            </md-select>
+					</md-input-container>				
 
 							<md-button class="md-icon-button" ng-show="vm.showEdit" ng-click="vm.showEditForm()" aria-label="null">
 								<ng-md-icon icon="edit"></ng-md-icon>
@@ -46,13 +49,12 @@
 								<ng-md-icon icon="delete"></ng-md-icon>
 							</md-button>
 
-
 				</div>
 					
 			</md-toolbar>
 
 
-			<mdt-table selectable-rows="true" paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" selected-row-callback="vm.selectedRowCallback(rows)" mdt-row="{
+			<mdt-table selectable-rows="true" ng-disabled="active" paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" selected-row-callback="vm.selectedRowCallback(rows)" mdt-row="{
                       data: filteredEmployees,
 										'table-row-id-key': '_id',																																														 
                       'column-keys': [
@@ -63,7 +65,8 @@
                           'skill',
                           'placement_type',
                           'recruiter',
-                          'salary'
+                          'salary',
+												'activate'
                           
                       ]
                       }">
@@ -75,6 +78,7 @@
 					<mdt-column align-rule="right">Placement</mdt-column>
 					<mdt-column align-rule="right">Recruiter</mdt-column>
 					<mdt-column align-rule="right">Salary</mdt-column>
+					<mdt-column align-rule="right">Activated</mdt-column>
 
 				</mdt-header-row>
 				
@@ -87,6 +91,4 @@
 
 			</mdt-table>
 				
-
-  </confirmable>
-<!--					{{vm.employeeList[0]}}-->
+		</md-content>
