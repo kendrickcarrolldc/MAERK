@@ -33,6 +33,11 @@ var employeeSchema = new mongoose.Schema({
 		required: true
 	},
 	
+	salary: {
+	type: Number,
+	required: true
+},
+	
 	insurance: {
 		type: Number,
 		required: true
