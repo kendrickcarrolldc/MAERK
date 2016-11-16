@@ -18,7 +18,7 @@
 
 	</md-content>
 
-
+	
 	<md-content>
 		<md-content>
 			<md-toolbar>
@@ -26,7 +26,7 @@
 				<div class="md-toolbar-tools" layout="row" layout-align="end center">
 					<h4 layout="row" layout-align="start" style="padding-right: 5px">Ksquare Employees</h4>
 
-					<md-button class="md-icon-button" ng-click="vm.showCustomGreeting()">
+					<md-button class="md-icon-button" ng-click="vm.showAddForm()" aria-label="null">
 						<ng-md-icon size="28" style="fill: white;" icon="person_add"></ng-md-icon>
 					</md-button>
 
@@ -38,16 +38,17 @@
 						<option value="deactivate">Deactivate</option>
 						<select>
 
-							<md-button class="md-icon-button" ng-show="vm.showEdit">
+							<md-button class="md-icon-button" ng-show="vm.showEdit" ng-click="vm.showEditForm()" aria-label="null">
 								<ng-md-icon icon="edit"></ng-md-icon>
 							</md-button>
 
-							<md-button class="md-icon-button" ng-click="vm.showConfirm($event)" ng-show="vm.showDelete">
+							<md-button class="md-icon-button" ng-click="vm.showConfirm($event)" ng-show="vm.showDelete" aria-label="null">
 								<ng-md-icon icon="delete"></ng-md-icon>
 							</md-button>
 
 
 				</div>
+					
 			</md-toolbar>
 
 
@@ -85,3 +86,7 @@
 				</mdt-custom-cell>
 
 			</mdt-table>
+				
+
+  </confirmable>
+<!--					{{vm.employeeList[0]}}-->
