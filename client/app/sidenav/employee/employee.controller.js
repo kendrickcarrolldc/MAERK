@@ -38,6 +38,7 @@
 					locals: {
 						employeeList: this.employeeList,
 						selectedRow: selectedRow
+						
 					}
 					
 				})	

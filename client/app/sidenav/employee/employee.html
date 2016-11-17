@@ -36,8 +36,9 @@
 
 
 					<md-input-container>
-						<md-select name="activate" ng-model="vm.act" ng-show="vm.showStatus" aria-label="null">
-              <md-option ng-repeat=" item in vm.actOpt" ng-value="item.name" ng-click="item.fn()">{{item.name}}</md-option>
+						<label>Active Status</label>
+						<md-select name="activate"  ng-model="vm.act" ng-show="vm.showStatus" aria-label="null">
+              <md-option ng-selected="$first" ng-repeat=" item in vm.actOpt"  ng-click="item.fn()">{{item.name}}</md-option>
             </md-select>
 					</md-input-container>				
 
@@ -63,10 +64,10 @@
 												'last_name',																															
                           'client',
                           'skill',
+												'activate',
                           'placement_type',
                           'recruiter',
-                          'salary',
-												'activate'
+                          'salary'
                           
                       ]
                       }">
@@ -75,10 +76,10 @@
 					<mdt-column align-rule="right">Last Name</mdt-column>
 					<mdt-column align-rule="right">Client</mdt-column>
 					<mdt-column align-rule="right">Skill</mdt-column>
+					<mdt-column align-rule="right">Active Status</mdt-column>
 					<mdt-column align-rule="right">Placement</mdt-column>
 					<mdt-column align-rule="right">Recruiter</mdt-column>
 					<mdt-column align-rule="right">Salary</mdt-column>
-					<mdt-column align-rule="right">Activated</mdt-column>
 
 				</mdt-header-row>
 				
