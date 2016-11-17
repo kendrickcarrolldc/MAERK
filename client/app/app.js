@@ -6,7 +6,7 @@ angular.module('maerkApp', ['maerkApp.auth', 'maerkApp.admin', 'maerkApp.constan
   .config(function($urlRouterProvider, $locationProvider, $mdThemingProvider) {
 		$mdThemingProvider.theme('default')
     .primaryPalette('light-blue')
-    .accentPalette('blue-grey');
+    .accentPalette('grey');
 	
     $urlRouterProvider.otherwise('/');
 
