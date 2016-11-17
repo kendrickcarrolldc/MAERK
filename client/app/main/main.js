@@ -2,7 +2,9 @@
 
 angular.module('maerkApp')
   .config(function($stateProvider) {
-    $stateProvider.state('main', {
+   
+	
+	$stateProvider.state('main', {
       url: '/dashboard',
       template: '<main flex layout="row"></main>',
 			authenticate: true,
@@ -15,6 +17,15 @@ angular.module('maerkApp')
 			controller: 'employeesController',
 			controllerAs: 'vm'
 //			authenticate: true
+		})
+		
+		.state('main.skills', {
+			url: '/skills',
+			templateUrl: 'app/sidenav/reports/skills/skills.html',
+			controller: 'skillsController',
+			controllerAs: 'vm',
+//			authenticate: true
+			
 		})
   });
 
