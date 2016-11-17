@@ -15,8 +15,8 @@ angular.module('maerkApp')
 			url: '/employees',
 			templateUrl: 'app/sidenav/employee/employee.html',
 			controller: 'employeesController',
-			controllerAs: 'vm'
-//			authenticate: true
+			controllerAs: 'vm',
+			authenticate: true
 		})
 		
 		.state('main.skills', {
@@ -24,7 +24,7 @@ angular.module('maerkApp')
 			templateUrl: 'app/sidenav/reports/skills/skills.html',
 			controller: 'skillsController',
 			controllerAs: 'vm',
-//			authenticate: true
+			authenticate: true
 			
 		})
   });
