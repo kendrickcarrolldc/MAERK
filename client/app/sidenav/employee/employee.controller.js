@@ -12,41 +12,43 @@
 		this.actOpt = [{
 			name: "Activate",
 			fn: () => { // function loops through the selected rows and then the empList and changes activate to true
-				
-				for (var j = 0; j < selectedRow.length; j++) {
-					for (var i = 0; i < this.employeeList.length; i++) {
-						if (this.employeeList[i]._id == selectedRow[j]) {
-							this.employeeList[i].activate = true;
-							EmployeeFact.update(this.employeeList[i]);
-		
-							break;
-						}
+				$mdDialog.show({
+					controller: 'actiController',
+					controllerAs: 'vm',
+					templateUrl: './app/sidenav/employee/activate.html' ,
+					locals: {
+						employeeList: this.employeeList,
+						selectedRow: selectedRow
 					}
-				}
+					
+				})
+//			
 			}
-
-
 		},
+
+		
 		{
 			name: "Deactivate",
 			fn: () => {
 			
-				for (var j = 0; j < selectedRow.length; j++) {
-					for (var i = 0; i < this.employeeList.length; i++) {
-						if (this.employeeList[i]._id == selectedRow[j]) {
-							this.employeeList[i].activate = false;
-							EmployeeFact.update(this.employeeList[i]);
-							
-							break;
-						}
+				$mdDialog.show({
+					controller: 'deactiController',
+					controllerAs: 'vm',
+					templateUrl: './app/sidenav/employee/deactivate.html' ,
+					locals: {
+						employeeList: this.employeeList,
+						selectedRow: selectedRow
 					}
-				}
+					
+				})	
 			}
 		}];
 		
+
 	
 	this.act = this.actOpt[0].name;
 		
+	
 
 //Add employee dialog functionality
 		this.showAddForm = function () {
