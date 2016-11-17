@@ -6,9 +6,51 @@
 	.controller('employeesController', function ($mdToast, EmployeeFact, $mdDialog, $mdSelect, $mdConstant) {
 
 		this.employeeList = EmployeeFact.employeeList;
+		
+		
+// Activate deactive objects for md select
+		this.actOpt = [{
+			name: "Activate",
+			fn: () => { // function loops through the selected rows and then the empList and changes activate to true
+				$mdDialog.show({
+					controller: 'actiController',
+					controllerAs: 'vm',
+					templateUrl: './app/sidenav/employee/activate.html' ,
+					locals: {
+						employeeList: this.employeeList,
+						selectedRow: selectedRow
+					}
+					
+				})
+//			
+			}
+		},
 
-//		this.addControls = true;
-//		this.editControls = false;
+		
+		{
+			name: "Deactivate",
+			fn: () => {
+			
+				$mdDialog.show({
+					controller: 'deactiController',
+					controllerAs: 'vm',
+					templateUrl: './app/sidenav/employee/deactivate.html' ,
+					locals: {
+						employeeList: this.employeeList,
+						selectedRow: selectedRow
+						
+					}
+					
+				})	
+			}
+		}];
+		
+
+	
+	this.act = this.actOpt[0].name;
+		
+	
+
 //Add employee dialog functionality
 		this.showAddForm = function () {
 			
@@ -36,8 +78,7 @@
 				
 			}
 			console.log(editedEmp, selectedRow[0], this.employeeList.length)
-		//look employee that will edited
-		//selectedRow
+			
 	$mdDialog.show({
 				clickOutsideToClose: true,
 				preserveScope: true,
@@ -80,33 +121,6 @@
 					console.log('nothing selected')
 				}
 			}
-		
-	
-//		
-			//Employee connection to database from service
-			//		this.employeeList = EmployeeFact.employeeList;
-
-
-
-		//Delete confirmation code-------->		
-
-		//  $scope.showConfirm = function(ev) {
-		//    // Appending dialog to document.body to cover sidenav in docs app
-		//    var confirm = $mdDialog.confirm()
-		//          .title('Would you like to delete your debt?')
-		//          .textContent('All of the banks have agreed to forgive you your debts.')
-		//          .ariaLabel('Lucky day')
-		//          .targetEvent(ev)
-		//          .ok('Please do it!')
-		//          .cancel('Sounds like a scam');
-		//
-		//    $mdDialog.show(confirm).then(function() {
-		//      $scope.status = 'You decided to get rid of your debt.';
-		//    }, function() {
-		//      $scope.status = 'You decided to keep your debt.';
-		//    });
-		//  };
-
 
 	});
 }());

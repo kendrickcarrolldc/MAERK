@@ -1,3 +1,5 @@
+
+
 <md-content layout="column" layout-padding flex>
 	<md-content>
 		<md-toolbar layout="row">
@@ -33,10 +35,12 @@
 					<span style="fill: white;" flex></span>
 
 
-					<select ng-show="vm.showStatus">
-						<option value="activate">Activate</option>
-						<option value="deactivate">Deactivate</option>
-						<select>
+					<md-input-container>
+						<label>Active Status</label>
+						<md-select name="activate"  ng-model="vm.act" ng-show="vm.showStatus" aria-label="null">
+              <md-option ng-selected="$first" ng-repeat=" item in vm.actOpt"  ng-click="item.fn()">{{item.name}}</md-option>
+            </md-select>
+					</md-input-container>				
 
 							<md-button class="md-icon-button" ng-show="vm.showEdit" ng-click="vm.showEditForm()" aria-label="null">
 								<ng-md-icon icon="edit"></ng-md-icon>
@@ -46,13 +50,12 @@
 								<ng-md-icon icon="delete"></ng-md-icon>
 							</md-button>
 
-
 				</div>
 					
 			</md-toolbar>
 
 
-			<mdt-table selectable-rows="true" paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" selected-row-callback="vm.selectedRowCallback(rows)" mdt-row="{
+			<mdt-table selectable-rows="true" ng-disabled="active" paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" selected-row-callback="vm.selectedRowCallback(rows)" mdt-row="{
                       data: filteredEmployees,
 										'table-row-id-key': '_id',																																														 
                       'column-keys': [
@@ -61,6 +64,7 @@
 												'last_name',																															
                           'client',
                           'skill',
+												'activate',
                           'placement_type',
                           'recruiter',
                           'salary'
@@ -72,6 +76,7 @@
 					<mdt-column align-rule="right">Last Name</mdt-column>
 					<mdt-column align-rule="right">Client</mdt-column>
 					<mdt-column align-rule="right">Skill</mdt-column>
+					<mdt-column align-rule="right">Active Status</mdt-column>
 					<mdt-column align-rule="right">Placement</mdt-column>
 					<mdt-column align-rule="right">Recruiter</mdt-column>
 					<mdt-column align-rule="right">Salary</mdt-column>
@@ -87,6 +92,4 @@
 
 			</mdt-table>
 				
-
-  </confirmable>
-<!--					{{vm.employeeList[0]}}-->
+		</md-content>
