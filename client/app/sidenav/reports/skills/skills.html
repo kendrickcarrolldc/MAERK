@@ -1,0 +1,90 @@
+
+
+<div  layout="column" flex >
+  <md-content class="md-padding">
+		
+    <md-tabs class="md-accent" md-dynamic-height md-border-bottom>
+      
+			<md-tab label="January"></md-tab>
+      
+			<md-tab label="February"></md-tab>
+      
+			<md-tab label="March"></md-tab>
+      
+			<md-tab label="April"></md-tab>
+      
+			<md-tab label="May"></md-tab>
+      
+			<md-tab label="June"></md-tab>
+      
+			<md-tab label="July"></md-tab>
+      
+			<md-tab label="August"></md-tab>
+      
+			<md-tab label="September"></md-tab>
+      
+			<md-tab label="October"></md-tab>
+      
+			<md-tab label="November"></md-tab>
+      
+			<md-tab label="December"></md-tab>
+    </md-tabs>
+      
+  </md-content>
+
+	<md-content layout-padding layout-gt-md="row" layout="column">
+    <h1 class="md-title">Select Year</h1>
+    <div layout="row">
+      <md-input-container>
+        <label>Year</label>
+        <md-select ng-model="year" style="min-width: 200px;">
+          <md-optgroup label="years">
+            <md-option ng-value="year" ng-repeat="year in vm.years">{{year}}</md-option>
+          </md-optgroup>
+        </md-select>
+      </md-input-container>
+    </div>
+	</md-content>
+
+<md-content layout-padding layout-gt-md="row" layout="column">
+	<div flex layout-gt-xs="column">
+		<md-card flex>
+
+			<md-card-title>
+				<md-card-title-text>
+					<span class="md-headline">Skills Table View</span>
+					<span class="md-subhead">Large</span>
+				</md-card-title-text>
+				<md-card-title-media>
+					<div class="md-media-lg card-media"></div>
+				</md-card-title-media>
+			</md-card-title>
+
+			<ui-view flex layout="column"></ui-view>
+
+		</md-card>
+	</div>
+	
+	
+	
+	<div flex layout-padding layout="column">
+		<md-card flex>
+
+			<md-card-title>
+				<md-card-title-text >
+					<span class="md-headline">Skills Chart View</span>
+					
+				</md-card-title-text>
+				<md-card-title-media>
+					<div class="md-media-lg card-media"></div>
+				</md-card-title-media>
+			</md-card-title>
+
+			<ui-view flex layout="column"></ui-view>
+
+		</md-card>
+
+	</div>
+
+</md-content>
+</div>
