@@ -83,17 +83,18 @@
 
 	<div flex layout="column">
 		<md-card flex>
-			<md-card-title>
-				<md-card-title-text>
-					<span class="md-headline">Card with image</span>
-
-				</md-card-title-text>
-			</md-card-title>
 			<md-card-content layout="row" >
-				<div flex></div>
-
-
+				<h2>Skills Chart</h2>
 			</md-card-content>
+			
+				<div flex>
+				
+				<!--Div that will hold the pie chart-->
+    		<div  google-chart chart="vm.myChartObject" ></div>
+					
+				</div>
+
+
 		</md-card>
 	</div>
 
