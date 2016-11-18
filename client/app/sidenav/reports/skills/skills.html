@@ -30,23 +30,23 @@
 
 	</md-content>
 
-	<md-content layout-padding layout-gt-md="row" layout="column">
+	<md-content layout-padding layout-gt-md="row" layout="row" >
+		
+			<md-input-container style="max-height: 30px;">
 		<h1 class="md-title">Select Year</h1>
-		<div layout="row">
-			<md-input-container>
 				<label>Year</label>
-				<md-select ng-model="year" style="min-width: 200px;">
+				<md-select ng-model="year">
 					<md-optgroup label="years">
 						<md-option ng-value="year" ng-repeat="year in vm.years">{{year}}</md-option>
 					</md-optgroup>
 				</md-select>
 			</md-input-container>
-		</div>
+		
 	</md-content>
 	
 <!--	layout="row" layout-align="center"-->
 	
-<div class="md-padding" layout="column" layout-lg="row" layout-xl="row" flex>
+<div class="md-padding"  layout="column" layout-gt-lg="row"  flex>
 	<md-content flex class="md-whiteframe-3dp" layout-padding layout="column">
 		<md-toolbar>
 				<h2 class="md-toolbar-tools">
@@ -57,7 +57,7 @@
 <!--			<md-card-content layout="row" flex="auto">-->
 				
 <!--				<div flex>-->
-					<mdt-table ng-disabled="active" paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" mdt-row="{
+					<mdt-table  paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10]}" mdt-row="{
                       data: vm.monthSelect,
 										'table-row-id-key': '_id',																																														 
                       'column-keys': [
@@ -82,7 +82,7 @@
 		
 	</md-content>
 
-	<md-content flex class="md-whiteframe-3dp" layout-padding layout="column">
+	<md-content flex class="md-whiteframe-3dp" layout-padding layout-gt-md="column">
 			<md-toolbar>
 				<h2 class="md-toolbar-tools">
 					<span>Skills Chart</span>
