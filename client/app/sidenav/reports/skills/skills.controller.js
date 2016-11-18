@@ -10,44 +10,49 @@
 			
 		}
 		
+		
+		
 		this.report = function (newMonth) {
 			this.monthSelect = this.month[newMonth];
+			this.createChartData("count");
+
 			console.log(this.month['january'])
 			return this.month['january']
 			
+			
 		}
-		
+
 	
 		
 		this.month = {
 			january: [{
 
 					first_name: 'Luis',
-					last_name: 'Chapoy',
-					salary: 10000
+					skill: ["nodeJS", "AngularJS", "Git"],
+					count: 3
             },
 				{
 					first_name: 'Nour',
-					last_name: 'Matouk',
-					salary: 9000
+					skill: ["nodeJS", "Git"],
+					count: 2
             },
 
 				{
 					first_name: 'Rocky',
-					last_name: 'karn',
-					salary: 3000
+					skill: ["nodeJS", "AngularJS", "Git", "Illustrator"],
+					count: 4
             },
 
 				{
 					first_name: 'Jamie',
-					last_name: 'Liz',
-					salary: 9000
+					skill: ["nodeJS"],
+					count: 1
             },
 
 				{
 					first_name: 'Anish',
-					last_name: 'Rijal',
-					salary: 8500
+					skill: ["nodeJS", "nodeJS"],
+					count: 2
 
 
 			}],
@@ -55,51 +60,51 @@
 			february: [{
 
 					first_name: 'Long',
-					last_name: 'Pham',
-					salary: 2000
+					skill: ["nodeJS", "AngularJS", "Git", "Illustrator"],
+					count: 4
             },
 
 				{
 					first_name: 'Raj',
-					last_name: 'K',
-					salary: 6000
+					skill: [1,2,3,4,5],
+					count: 5
             },
 
 				{
 					first_name: 'Tarun',
-					last_name: 'M',
-					salary: 8000
+					skill: [1,2],
+					count: 2
             },
 
 				{
 					first_name: 'Lily',
-					last_name: 'Bather',
-					salary: 7000
+					skill: [1,2,4,7],
+					count: 4
             }, ],
 
 			march: [{
 
 					first_name: 'Anish',
-					last_name: 'Rijal',
-					salary: 8500
+					skill: [1,2,4,7,5],
+					count: 5
 				},
 
 				{
 					first_name: 'Donovan',
-					last_name: 'Klang',
-					salary: 3000
+					skill: [1,2,4],
+					count: 3
 				},
 
 				{
 					first_name: 'Long',
-					last_name: 'Pham',
-					salary: 2000
+					skill: [1,2,4,7],
+					count: 4
 				},
 
 				{
 					first_name: 'Raj',
-					last_name: 'K',
-					salary: 6000
+					skill: [1,2],
+					count: 2
 
 			}]
 
@@ -108,19 +113,13 @@
 		
 		this.monthSelect = [];
 		
-		this.report("march");
+
 		
 		this.myChartObject = {};
 		
+		
+		
 		this.myChartObject.type = "PieChart";
-		
-//		this.chartingData = function (month, prop) {
-//			this.monthSelected = this.month[newMonth];
-//			console.log(this.month['january'])
-//			return this.month['january']
-//		}
-		
-		this.myChartObject.data = this.month.january;
 		
 		this.myChartObject.options = {
         title: 'How Much Pizza I Ate Last Night',
@@ -128,44 +127,19 @@
 				height: 400
     };
 		
+		this.createChartData=function (prop){ 
+			this.myChartObject.data = []; // Initiating myChartObjects data propertie
+			this.myChartObject.data.push(["First Name",prop]) //push first array to initialize the title and value
+			for(var i = 0; i < this.monthSelect.length; i++){
+				//pushes the skills property of the select month and the property name
+				this.myChartObject.data.push([this.monthSelect[i].first_name, this.monthSelect[i][prop]]) 
+			}
+			console.log(this.myChartObject.data)
+		}
 		
-//		this.onions = [{
-//				v: "Onions"
-//			},
-//        {
-//					v: 3
-//				},
-//		];
 		
-//		this.myChartObject.data = {
-//			"cols": [
-//        {id: "t", label: "Topping", type: "string"},
-//        {id: "s", label: "Slices", type: "number"}
-//    ], 
-//			"rows": [ // rows -array, object, object with an array with objects inside
-//        {c: [
-//            {v: "Mushrooms"},
-//            {v: 3},
-//        ]},
-//        {c: this.onions},
-//        {c: [
-//            {v: "Olives"},
-//            {v: 31}
-//        ]},
-//        {c: [
-//            {v: "Zucchini"},
-//            {v: 1},
-//        ]},
-//        {c: [
-//            {v: "Pepperoni"},
-//            {v: 2},
-//        ]}
-//    ]};
-		
-//[{{[]}}]
-								
-// rows in a array of objects
-								//each object has 
+		this.report("march");
 
+		
 		});
 }());

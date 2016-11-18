@@ -60,18 +60,17 @@
 										'table-row-id-key': '_id',																																														 
                       'column-keys': [
                           'first_name',
-												'last_name',																															
-                          'salary'    
+												'skill',																															
+                          'count'    
                       ]
                       }">
 						<mdt-header-row>
 							<mdt-column align-rule="right">First Name</mdt-column>
-							<mdt-column align-rule="right">Last Name</mdt-column>
-							<mdt-column align-rule="right">Salary</mdt-column>
-
+							<mdt-column align-rule="right">Skills</mdt-column>
+							<mdt-column align-rule="right">Count</mdt-column>
 						</mdt-header-row>
 
-						<mdt-custom-cell column-key="client">
+						<mdt-custom-cell column-key="skill">
 							<span ng-class="{}">{{value}}</span>
 						</mdt-custom-cell>
 
@@ -83,14 +82,14 @@
 
 	<div flex layout="column">
 		<md-card flex>
-			<md-card-content layout="row" >
+			<md-card-content layout="row">
 				<h2>Skills Chart</h2>
 			</md-card-content>
 			
 				<div flex>
 				
 				<!--Div that will hold the pie chart-->
-    		<div  google-chart chart="vm.myChartObject" ></div>
+    		<div google-chart chart="vm.myChartObject"></div>
 					
 				</div>
 
