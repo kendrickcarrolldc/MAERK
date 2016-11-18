@@ -122,9 +122,7 @@
 		this.myChartObject.type = "PieChart";
 		
 		this.myChartObject.options = {
-        title: 'How Much Pizza I Ate Last Night',
-				width: 500,
-				height: 400
+        title: 'How Much Pizza I Ate Last Night'
     };
 		
 		this.createChartData=function (prop){ 

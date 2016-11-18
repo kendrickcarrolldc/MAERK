@@ -46,12 +46,14 @@
 	
 <!--	layout="row" layout-align="center"-->
 	
-<md-content class="md-padding" layout-md="column" layout-lg="row">
-	<div flex layout="column">
-		<md-card flex>
-			<md-card-content>
-				<h2>Skills Table</h2>
-			</md-card-content>
+<div class="md-padding" layout="column" layout-lg="row" layout-xl="row" flex>
+	<md-content flex class="md-whiteframe-3dp" layout-padding layout="column">
+		<md-toolbar>
+				<h2 class="md-toolbar-tools">
+					<span>Skills Table</span>
+			</h2>
+		</md-toolbar>
+			
 <!--			<md-card-content layout="row" flex="auto">-->
 				
 <!--				<div flex>-->
@@ -77,26 +79,25 @@
 					</mdt-table>
 <!--				</div>-->
 <!--			</md-card-content>-->
-		</md-card>
-	</div>
+		
+	</md-content>
 
-	<div flex layout="column">
-		<md-card flex>
-			<md-card-content layout="row">
-				<h2>Skills Chart</h2>
-			</md-card-content>
-			
-				<div flex>
-				
+	<md-content flex class="md-whiteframe-3dp" layout-padding layout="column">
+			<md-toolbar>
+				<h2 class="md-toolbar-tools">
+					<span>Skills Chart</span>
+			</h2>
+		</md-toolbar>
+				<div flex  layout="column">
 				<!--Div that will hold the pie chart-->
-    		<div google-chart chart="vm.myChartObject"></div>
+    			<div google-chart chart="vm.myChartObject" flex></div>
 					
 				</div>
 
 
-		</md-card>
-	</div>
+		
+	</md-content>
 
 
-</md-content>			
+</div>			
 </div>
