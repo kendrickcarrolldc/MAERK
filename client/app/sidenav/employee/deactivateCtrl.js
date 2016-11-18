@@ -6,6 +6,7 @@
 
 			this.selectedRow = selectedRow;
 			this.employeeList = employeeList;
+		
 
 			this.closeDialog = function () {
 				$mdDialog.hide();
@@ -18,7 +19,7 @@
 						if (this.employeeList[i]._id == selectedRow[j]) {
 							this.employeeList[i].activate = false;
 							EmployeeFact.update(this.employeeList[i]);
-
+						
 							break;
 						}
 					}
