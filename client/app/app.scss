@@ -76,7 +76,7 @@ md-button {
 }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 400px) {
   .logo {
 	width: 70px;
 	height: 16px;
@@ -85,6 +85,12 @@ md-button {
 	left: 55px;	
 	
 }
+	
+	
+	#selectYear {
+	max-height: 30px;
+		
+	}
 }
 
 // Component styles are injected through grunt
