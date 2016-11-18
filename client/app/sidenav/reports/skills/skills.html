@@ -3,29 +3,29 @@
 
 		<md-tabs class="md-accent" md-dynamic-height md-border-bottom>
 
-			<md-tab label="January"></md-tab>
+			<md-tab label="January" ng-click="vm.report('january')"></md-tab>
 
-			<md-tab label="February"></md-tab>
+			<md-tab label="February" ng-click="vm.report('february')"></md-tab>
 
-			<md-tab label="March"></md-tab>
+			<md-tab label="March" ng-click="vm.report('march')"></md-tab>
 
-			<md-tab label="April"></md-tab>
+			<md-tab label="April" ng-click="vm.report('january')"></md-tab>
 
-			<md-tab label="May"></md-tab>
+			<md-tab label="May" ng-click="vm.report('january')"></md-tab>
 
-			<md-tab label="June"></md-tab>
+			<md-tab label="June" ng-click="vm.report('january')"></md-tab>
 
-			<md-tab label="July"></md-tab>
+			<md-tab label="July" ng-click="vm.report('january')"></md-tab>
 
-			<md-tab label="August"></md-tab>
+			<md-tab label="August" ng-click="vm.report('january')"></md-tab>
 
-			<md-tab label="September"></md-tab>
+			<md-tab label="September" ng-click="vm.report('january')"></md-tab>
 
-			<md-tab label="October"></md-tab>
+			<md-tab label="October" ng-click="vm.report('january')"></md-tab>
 
-			<md-tab label="November"></md-tab>
+			<md-tab label="November" ng-click="vm.report('january')"></md-tab>
 
-			<md-tab label="December"></md-tab>
+			<md-tab label="December" ng-click="vm.report('january')"></md-tab>
 		</md-tabs>
 
 	</md-content>
@@ -43,65 +43,60 @@
 			</md-input-container>
 		</div>
 	</md-content>
-
-		<div flex layout-gt-md="column">
-			<md-card flex>
-
-				<md-card-title>
-					<md-card-title-text>
-						<span class="md-headline">Skills Table View</span>
-						<span class="md-subhead">Large</span>
-					</md-card-title-text>
-
-				</md-card-title>
-
-				<mdt-table ng-disabled="active" paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" mdt-row="{
-                      data: vm.skills,
+	
+	
+	
+<md-content class="md-padding" layout-xs="column" layout="row">
+	<div flex layout="column">
+		<md-card flex>
+			<md-card-content>
+				<h2>Skills Table</h2>
+			</md-card-content>
+<!--			<md-card-content layout="row" flex="auto">-->
+				
+<!--				<div flex>-->
+					<mdt-table ng-disabled="active" paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" mdt-row="{
+                      data: vm.monthSelect,
 										'table-row-id-key': '_id',																																														 
                       'column-keys': [
-                          
                           'first_name',
 												'last_name',																															
-                          'salary'
-                          
-                          
+                          'salary'    
                       ]
                       }">
-					<mdt-header-row>
-						<mdt-column align-rule="right">First Name</mdt-column>
-						<mdt-column align-rule="right">Last Name</mdt-column>
-						<mdt-column align-rule="right">Salary</mdt-column>
+						<mdt-header-row>
+							<mdt-column align-rule="right">First Name</mdt-column>
+							<mdt-column align-rule="right">Last Name</mdt-column>
+							<mdt-column align-rule="right">Salary</mdt-column>
 
-					</mdt-header-row>
+						</mdt-header-row>
 
-					<mdt-custom-cell column-key="client">
-						<span ng-class="{}">{{value}}</span>
-					</mdt-custom-cell>
+						<mdt-custom-cell column-key="client">
+							<span ng-class="{}">{{value}}</span>
+						</mdt-custom-cell>
 
-				</mdt-table>
+					</mdt-table>
+<!--				</div>-->
+<!--			</md-card-content>-->
+		</md-card>
+	</div>
 
-			</md-card>
-		</div>
+	<div flex layout="column">
+		<md-card flex>
+			<md-card-title>
+				<md-card-title-text>
+					<span class="md-headline">Card with image</span>
+
+				</md-card-title-text>
+			</md-card-title>
+			<md-card-content layout="row" >
+				<div flex></div>
 
 
+			</md-card-content>
+		</md-card>
+	</div>
 
-		
-			<md-card flex>
 
-				<md-card-title>
-					<md-card-title-text>
-						<span class="md-headline">Skills Chart View</span>
-
-					</md-card-title-text>
-					<md-card-title-media>
-						<div class="md-media-lg card-media"></div>
-					</md-card-title-media>
-				</md-card-title>
-
-				<ui-view flex layout="column"></ui-view>
-
-			</md-card>
-
-		
-
+</md-content>			
 </div>
