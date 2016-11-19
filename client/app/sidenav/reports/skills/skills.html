@@ -1,7 +1,7 @@
 <div layout="column" flex>
-	<md-content class="md-padding">
+	<md-content class="md-padding" >
 
-		<md-tabs class="md-accent" md-dynamic-height md-border-bottom>
+		<md-tabs class="md-accent"  md-border-bottom>
 
 			<md-tab label="January" ng-click="vm.report('january')"></md-tab>
 
@@ -33,8 +33,8 @@
 	<md-content  layout-padding layout-gt-md="row" layout="row" >
 		
 			<md-input-container class="selectYear" id="selectYear" >
-		<h1 class="md-title">Select Year</h1>
-				<label>Year</label>
+		
+				<label>Select Year</label>
 				<md-select ng-model="year">
 					<md-optgroup label="years">
 						<md-option ng-value="year" ng-repeat="year in vm.years">{{year}}</md-option>
@@ -46,8 +46,8 @@
 	
 <!--	layout="row" layout-align="center"-->
 	
-<div class="md-padding"  layout="column" layout-gt-md="row"  flex>
-	<md-content flex class="md-whiteframe-3dp" layout-padding layout="column">
+<div class="md-padding"  layout="column" layout-gt-md="row"   flex="auto">
+	<section layout-padding flex="50" >
 		<md-toolbar>
 				<h2 class="md-toolbar-tools">
 					<span>Skills Table</span>
@@ -80,23 +80,23 @@
 <!--				</div>-->
 <!--			</md-card-content>-->
 		
-	</md-content>
+	</section>
 
-	<md-content flex class="md-whiteframe-3dp" layout-padding layout-gt-md="column">
+	<section layout-padding  flex="50">
 			<md-toolbar>
 				<h2 class="md-toolbar-tools">
 					<span>Skills Chart</span>
 			</h2>
 		</md-toolbar>
 				<div flex  layout="column">
-				<!--Div that will hold the pie chart-->
+				
     			<div google-chart chart="vm.myChartObject" flex></div>
 					
 				</div>
 
 
-		
-	</md-content>
+		</section>
+	
 
 
 </div>			
