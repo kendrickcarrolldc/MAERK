@@ -27,5 +27,14 @@ angular.module('maerkApp')
 			authenticate: true
 			
 		})
+	
+		.state('main.clients', {
+			url: '/clients',
+			templateUrl: 'app/sidenav/reports/clients/clients.html',
+			controller: 'clientsController',
+			controllerAs: 'vm',
+			authenticate: true
+			
+		})
   });
 
