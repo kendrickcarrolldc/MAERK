@@ -1,7 +1,7 @@
 <div layout="column" flex>
-	<md-content class="md-padding">
+	<md-content class="md-padding" >
 
-		<md-tabs class="md-accent" md-dynamic-height md-border-bottom>
+		<md-tabs class="md-accent"  md-border-bottom>
 
 			<md-tab label="January" ng-click="vm.report('january')"></md-tab>
 
@@ -30,73 +30,74 @@
 
 	</md-content>
 
-	<md-content layout-padding layout-gt-md="row" layout="column">
-		<h1 class="md-title">Select Year</h1>
-		<div layout="row">
-			<md-input-container>
-				<label>Year</label>
-				<md-select ng-model="year" style="min-width: 200px;">
+	<md-content  layout-padding layout-gt-md="row" layout="row" >
+		
+			<md-input-container class="selectYear" id="selectYear" >
+		
+				<label>Select Year</label>
+				<md-select ng-model="year">
 					<md-optgroup label="years">
 						<md-option ng-value="year" ng-repeat="year in vm.years">{{year}}</md-option>
 					</md-optgroup>
 				</md-select>
 			</md-input-container>
-		</div>
+		
 	</md-content>
 	
 <!--	layout="row" layout-align="center"-->
 	
-<md-content class="md-padding" layout-md="column" layout-lg="row">
-	<div flex layout="column">
-		<md-card flex>
-			<md-card-content>
-				<h2>Skills Table</h2>
-			</md-card-content>
+<div class="md-padding"  layout="column" layout-gt-md="row"   flex="auto">
+	<section layout-padding flex="50" >
+		<md-toolbar>
+				<h2 class="md-toolbar-tools">
+					<span>Skills Table</span>
+			</h2>
+		</md-toolbar>
+			
 <!--			<md-card-content layout="row" flex="auto">-->
 				
 <!--				<div flex>-->
-					<mdt-table ng-disabled="active" paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10, 20, 100]}" mdt-row="{
+					<mdt-table  paginated-rows="{isEnabled: true, rowsPerPageValues: [5, 10]}" mdt-row="{
                       data: vm.monthSelect,
 										'table-row-id-key': '_id',																																														 
                       'column-keys': [
                           'first_name',
-												'last_name',																															
-                          'salary'    
+												'skill',																															
+                          'count'    
                       ]
                       }">
 						<mdt-header-row>
 							<mdt-column align-rule="right">First Name</mdt-column>
-							<mdt-column align-rule="right">Last Name</mdt-column>
-							<mdt-column align-rule="right">Salary</mdt-column>
-
+							<mdt-column align-rule="right">Skills</mdt-column>
+							<mdt-column align-rule="right">Count</mdt-column>
 						</mdt-header-row>
 
-						<mdt-custom-cell column-key="client">
+						<mdt-custom-cell column-key="skill">
 							<span ng-class="{}">{{value}}</span>
 						</mdt-custom-cell>
 
 					</mdt-table>
 <!--				</div>-->
 <!--			</md-card-content>-->
-		</md-card>
-	</div>
+		
+	</section>
 
-	<div flex layout="column">
-		<md-card flex>
-			<md-card-title>
-				<md-card-title-text>
-					<span class="md-headline">Card with image</span>
-
-				</md-card-title-text>
-			</md-card-title>
-			<md-card-content layout="row" >
-				<div flex></div>
-
-
-			</md-card-content>
-		</md-card>
-	</div>
+	<section layout-padding  flex="50">
+			<md-toolbar>
+				<h2 class="md-toolbar-tools">
+					<span>Skills Chart</span>
+			</h2>
+		</md-toolbar>
+				<div flex  layout="column">
+				
+    			<div google-chart chart="vm.myChartObject" flex></div>
+					
+				</div>
 
 
-</md-content>			
+		</section>
+	
+
+
+</div>			
 </div>

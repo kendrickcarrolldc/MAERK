@@ -76,6 +76,23 @@ md-button {
 }
 }
 
+@media screen and (max-width: 400px) {
+  .logo {
+	width: 70px;
+	height: 16px;
+	position: absolute;
+	top: 15px;
+	left: 55px;	
+	
+}
+	
+	
+//	#selectYear {
+//	max-height: 30px;
+//		
+//	}
+}
+
 // Component styles are injected through grunt
 /* inject:scss */
 @import 'admin/admin';
