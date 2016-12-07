@@ -5,25 +5,23 @@
 		.controller('skillsController', function () {
 
 		this.years = [2014, 2015, 2016];
-		
+
 		this.selectedYear = function() {
-			
+
 		}
-		
-		
-		
+
+
+
 		this.report = function (newMonth) {
 			this.monthSelect = this.month[newMonth];
 			this.createChartData("count");
 
 			console.log(this.month['january'])
-			return this.month['january']
-			
-			
+			return this.month['january']	
 		}
 
-	
-		
+
+
 		this.month = {
 			january: [{
 
@@ -109,37 +107,37 @@
 			}]
 
 		};
-		
-		
-		this.monthSelect = [];
-		
 
-		
+
+		this.monthSelect = [];
+
+
+
 		this.myChartObject = {};
-		
-		
-		
+
+
+
 		this.myChartObject.type = "PieChart";
-		
+
 		this.myChartObject.options = {
         title: 'How Much Pizza I Ate Last Night',
-				
-				
+
+
     };
-		
-		this.createChartData=function (prop){ 
+
+		this.createChartData=function (prop){
 			this.myChartObject.data = []; // Initiating myChartObjects data propertie
 			this.myChartObject.data.push(["First Name",prop]) //push first array to initialize the title and value
 			for(var i = 0; i < this.monthSelect.length; i++){
 				//pushes the skills property of the select month and the property name
-				this.myChartObject.data.push([this.monthSelect[i].first_name, this.monthSelect[i][prop]]) 
+				this.myChartObject.data.push([this.monthSelect[i].first_name, this.monthSelect[i][prop]])
 			}
 			console.log(this.myChartObject.data)
 		}
-		
-		
+
+
 		this.report("march");
 
-		
+
 		});
 }());

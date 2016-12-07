@@ -2,7 +2,7 @@
 
 (function () {
 
-	angular.module('maerkApp.auth')
+	angular.module('maerkApp')
 		.factory('EmployeeFact', function ($resource, $mdDialog) {
 
 			var employeeResource = $resource('/api/employee/:id/:controller', {
