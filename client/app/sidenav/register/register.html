@@ -62,9 +62,13 @@
 
 	<md-table-pagination md-limit="5" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{desserts.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
 
-	<div>
-		<md-button class="md-raised" ng-click="">
-			Button
+	<div layout="row" layout-align="center center">
+		<md-button class="md-raised md-primary" type='submit' ng-click="null">
+			Save
+		</md-button>
+		
+		<md-button class="md-raised md-primary" type='submit' ng-click="null">
+			Submit
 		</md-button>
 	</div>
 
