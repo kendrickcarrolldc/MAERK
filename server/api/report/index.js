@@ -6,7 +6,7 @@ import * as auth from '../../auth/auth.service';
 
 
 
-router.get("/", auth.hasRole('admin'), controller.index);
+router.get("/", controller.index);
 router.get("/:id", auth.isAuthenticated(), controller.show);
 //router.post("/:id",controller.save);
 router.post("/", auth.isAuthenticated(), controller.create);
@@ -15,3 +15,5 @@ router.post("/:id", auth.isAuthenticated(), controller.update);
 
 
 module.exports = router;
+
+//auth.hasRole('admin'),   // put back in  line 9 for 2nd argument when ready
