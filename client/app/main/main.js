@@ -42,6 +42,15 @@ angular.module('maerkApp')
 			templateUrl: 'app/sidenav/register/register.html',
 			controller: 'registerController',
 			controllerAs: 'vm',
+			resolve:{
+				prop: function(EmployeeFact, ReportFact) {
+					return {
+						EmployeeFact: EmployeeFact.employeeList.$promise,
+						ReportFact: ReportFact.reportList.$promise
+					
+				}
+			}
+			},
 			authenticate: true
 		})
 
