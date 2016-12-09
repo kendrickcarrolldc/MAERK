@@ -23,6 +23,7 @@
 	});
 		
 		var reportList = reportResource.query();
+		console.log(reportList);
 		
 		return {
 			reportList: reportList,
@@ -47,7 +48,7 @@
 		}	
 		}
 			
-		}
+		
 });
 	
 })();

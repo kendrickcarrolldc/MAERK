@@ -88,18 +88,18 @@ var reportSchema = new mongoose.Schema({
 		required: true
 	},
 
-	january: [employeeSchema]
-//	february: [employeeSchema],
-//	march: [employeeSchema],
-//	april: [employeeSchema],
-//	may: [employeeSchema],
-//	june: [employeeSchema],
-//	july: [employeeSchema],
-//	august: [employeeSchema],
-//	september: [employeeSchema],
-//	october: [employeeSchema],
-//	november: [employeeSchema],
-//	december: [employeeSchema]
+	january: [employeeSchema],
+	february: [employeeSchema],
+	march: [employeeSchema],
+	april: [employeeSchema],
+	may: [employeeSchema],
+	june: [employeeSchema],
+	july: [employeeSchema],
+	august: [employeeSchema],
+	september: [employeeSchema],
+	october: [employeeSchema],
+	november: [employeeSchema],
+	december: [employeeSchema]
 
 });
 
