@@ -9,7 +9,7 @@
 		
 		
 		this.employeeList = EmployeeFact.employeeList;
-		console.log(this.employeeList[1]);
+//		console.log(this.employeeList[1]);
 
 		this.reportList = ReportFact.reportList;
 		console.log(this.reportList[0]);

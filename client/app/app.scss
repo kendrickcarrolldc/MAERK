@@ -12,7 +12,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   padding: 0.2em 0;
 }
 
-.material-icons.md-36 { 
+.material-icons.md-36 {
 	font-size: 36px;
 	positon: relative;
 	right: 10px;
@@ -30,7 +30,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 	position: absolute;
 	top: 15px;
 	left: 20px;
-	
+
 }
 md-content {
 	padding-bottom: 10px;
@@ -61,8 +61,8 @@ md-button {
 //  .container {
 //    max-width: 100%;
 //  }
-//	
-//	
+//
+//
 //}
 
 @media screen and (max-width: 600px) {
@@ -71,8 +71,8 @@ md-button {
 	height: 23px;
 	position: absolute;
 	top: 15px;
-	left: 70px;	
-	
+	left: 70px;
+
 }
 }
 
@@ -82,20 +82,15 @@ md-button {
 	height: 16px;
 	position: absolute;
 	top: 15px;
-	left: 55px;	
-	
+	left: 55px;
+
 }
-	
-	
+
+
 //	#selectYear {
 //	max-height: 30px;
-//		
+//
 //	}
 }
 
 // Component styles are injected through grunt
-/* inject:scss */
-@import 'admin/admin';
-@import 'main/main';
-@import '../components/footer/footer';
-/* endinject */
